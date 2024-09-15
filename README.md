@@ -1,4 +1,9 @@
+![image](https://github.com/user-attachments/assets/f80f9010-0de0-412e-b4e5-454b87fa7593)
+
+<div align="center">
+  
 # Stree Shield: AI/ML-based Deepfake Detection
+</div>
 
 ### 🌐 Real-time detection of face-swap deepfake videos and morphed images.
 
