@@ -1,7 +1,9 @@
-![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/78998710-7014-46bc-817a-6768aa8bf188)
+
 
 
 <div align="center">
+  
+![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/78998710-7014-46bc-817a-6768aa8bf188)
   
 # Stree Shield: AI/ML-based Deepfake Detection
 </div>
