@@ -75,13 +75,13 @@ The **workflow** involves:
 
 ## Technologies Used
 
-- **Frontend**: ReactJS for a dynamic user interface.
-- **Backend**: Express.js and Next.js for media processing and model inference.
-- **Models**: 
+- **Frontend**: ReactJS for a dynamic user interface (Akhil & Jayanth), Figma for UI/UX (Jayanth)
+- **Backend**: FastAPI for setting up communications (Ayush)
+- **Models**: Tensorflow for model inference (Praneeth & Balaswitha)
   - **CNN** for image classification.
   - **3D CNN** for video analysis.
-- **Database**: MySQL for data storage.
-- **API**: PHP-based REST APIs for communication.
+- **Database**: MongoDB for data storage. (Ayush) 
+- **API**: REST APIs for communication. (Ayush & Akhil)
 
 ---
 
