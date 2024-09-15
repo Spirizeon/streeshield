@@ -77,6 +77,8 @@ The **workflow** involves:
 
 ## Technologies Used
 
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,fastapi,tensorflow,mongodb,figma,postman,git)](https://skillicons.dev)
+
 - **Frontend**: ReactJS for a dynamic user interface (Akhil & Jayanth), Figma for UI/UX (Jayanth)
 - **Backend**: FastAPI for setting up communications (Ayush)
 - **Models**: Tensorflow for model inference (Praneeth & Balaswitha)
