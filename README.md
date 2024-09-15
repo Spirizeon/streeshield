@@ -5,7 +5,7 @@
   
 ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/78998710-7014-46bc-817a-6768aa8bf188)
   
-# Stree Shield: AI/ML-based Deepfake Detection
+# Stree Shield: AI-driven Deepfake Defense
 </div>
 
 ### 🌐 Real-time detection of face-swap deepfake videos and morphed images.
