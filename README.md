@@ -1,4 +1,4 @@
-
+![ezgif com-video-to-gif-converter (2)](https://github.com/user-attachments/assets/c9503db5-77bf-456b-960e-826e468ec87d)
 
 
 <div align="center">
@@ -55,8 +55,10 @@ The **workflow** involves:
    - **Videos**: Analyzed using a 3D CNN for deepfake detection.
 
 5. **Real-time Results**: Confidence percentages are calculated and displayed for both images and videos.
+<img src="https://github.com/user-attachments/assets/8ccb26d5-ca85-41f5-8ad2-52fe875bf359"  width="100%">
 
-![Desktop](https://github.com/user-attachments/assets/218dceab-d5b5-46e3-ac6e-43e0ee994b6e)
+
+
 ![Desktop (1)](https://github.com/user-attachments/assets/b2750a81-626c-4905-b896-f3faebfc96b0)
 ![Desktop (2)](https://github.com/user-attachments/assets/c5b1ab50-3859-4d04-9cff-a9abad159c2e)
 
