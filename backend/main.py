@@ -46,6 +46,58 @@ UPLOAD_DIRECTORY = "uploads"
 async def hello():
     return JSONResponse(content={"hello": "world"}, status_code=200)
 
+import requests
+
+# Define the crawler functions
+def upload_to_imgbb(image_path, imgbb_api_key):
+    url = f"https://api.imgbb.com/1/upload?expiration=600&key={imgbb_api_key}"
+
+    headers = {
+        "Authorization": f"Client-ID {imgbb_api_key}"
+    }
+    with open(image_path, 'rb') as image_file:
+        response = requests.post(url, headers=headers, files={'image': image_file})
+    response_data = response.json()
+    if response_data['status'] == 200:
+        return response_data['data']['url']
+    else:
+        raise Exception(f"ImgBB upload failed: {response_data['error']['message']}")
+
+def search_image_with_serpapi(image_url, serpapi_api_key):
+    url = "https://serpapi.com/search"
+    params = {
+        "api_key": serpapi_api_key,
+        "engine": "google_reverse_image",
+        "image_url": image_url
+    }
+    response = requests.get(url, params=params)
+    response_data = response.json()
+    if response.status_code == 200:
+        return response_data
+    else:
+        raise Exception(f"SerpApi search failed: {response_data.get('error', 'Unknown error')}")
+
+def process_image(file_data: bytes, imgbb_api_key: str, serpapi_api_key: str) -> dict:
+    # Save file to a temporary path
+    temp_path = "temp_image.jpg"
+    with open(temp_path, 'wb') as f:
+        f.write(file_data)
+    
+    # Upload the image to ImgBB
+    imgbb_url = upload_to_imgbb(temp_path, imgbb_api_key)
+    
+    # Search for the image using SerpApi
+    
+    search_result = search_image_with_serpapi(imgbb_url, serpapi_api_key)
+    return search_result
+    
+
+
+
+
+
+
+
 # Upload file
 @app.post("/upload/")
 async def upload_file(file: UploadFile = File(...)):
@@ -64,13 +116,23 @@ async def upload_file(file: UploadFile = File(...)):
         metadata={"content_type": file.content_type}
     )
 
+
+    # Process the image (requires ImgBB and SerpApi keys)
+    imgbb_api_key = "292c53ed71670d59e2df7ea64844cd8e"  # Replace with your ImgBB API key
+    serpapi_api_key = "eaf3303f7237e5c9e8e37a44fa104abb83bf90df185dc7bc7bf552b8e1f0b987"  # Replace with your SerpApi API key
+
+    result = process_image(contents, imgbb_api_key, serpapi_api_key)
+    detection_result = detector(contents)  # Assuming `detector` processes the image file
+
+    # Store results in MongoDB
+    await db["fs.files"].update_one(
+        {"_id": ObjectId(file_id)},
+        {"$set": {"metadata.result": result, "metadata.detection_result": detection_result}}
+    )
+
+    # Return the result through the /file/{file_id} endpoint
     return await get_file(str(file_id))
 
-
-# Retrieve binary value
-def binary_value(value: int) -> dict:
-    # This function can handle the binary value and return a result or a more complex object
-    return {"binary_value": value}
 
 
 # Detector function to process the image through the loaded model
@@ -98,26 +160,38 @@ def detector(file_data: bytes) -> int:
     return 1 if prediction > 0.5 else 0
 
 
+def extract_image_links(serpapi_response):
+    # Extract image results from the response
+    image_results = serpapi_response.get('image_results', [])
+    
+    # Extract the 'link' from each image result
+    image_links = [result.get('link') for result in image_results if result.get('link')]
+    
+    return image_links
+
+
+
 @app.get("/file/{file_id}")
 async def get_file(file_id: str):
     try:
-        # Correct the query to find the file from the default GridFS `fs.files` collection
         file = await db["fs.files"].find_one({"_id": ObjectId(file_id)})
         if file:
-            # Create a GridOut object to read the file using `fs_bucket`
+            # Create a GridOut object to read the file using fs_bucket
             grid_out = await fs_bucket.open_download_stream(ObjectId(file_id))
 
             # Read file content
             file_data = await grid_out.read()
 
-            # Pass the file content to the detector function (for model prediction)
-            detection_result = detector(file_data)
+            # Fetch the results from MongoDB
+            result = file.get("metadata",{}).get("result",{})
+    
+            detection_result = file.get("metadata", {}).get("detection_result", {})
 
-            # Pass the detector result to binary_value function
-            binary_value_result = binary_value(detection_result)
-
-            # Return the final result
-            return JSONResponse(content={"file_id": file_id, "detection_result": detection_result, "binary_value": binary_value_result}, status_code=200)
+            return JSONResponse(content={
+                "file_id": file_id,
+                "detection_result": detection_result,
+                "search_result": extract_image_links(result),
+            }, status_code=200)
         else:
             return JSONResponse(content={"message": "File not found"}, status_code=404)
     except Exception as e:
