@@ -5,7 +5,7 @@
   
 ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/78998710-7014-46bc-817a-6768aa8bf188)
   
-# Stree Shield: AI/ML-based Deepfake Detection
+# Stree Shield: AI-driven Deepfake Defense
 </div>
 
 ### 🌐 Real-time detection of face-swap deepfake videos and morphed images.
@@ -55,8 +55,10 @@ The **workflow** involves:
    - **Videos**: Analyzed using a 3D CNN for deepfake detection.
 
 5. **Real-time Results**: Confidence percentages are calculated and displayed for both images and videos.
+<img src="https://github.com/user-attachments/assets/8ccb26d5-ca85-41f5-8ad2-52fe875bf359"  width="100%">
 
-![Desktop](https://github.com/user-attachments/assets/218dceab-d5b5-46e3-ac6e-43e0ee994b6e)
+
+
 ![Desktop (1)](https://github.com/user-attachments/assets/b2750a81-626c-4905-b896-f3faebfc96b0)
 ![Desktop (2)](https://github.com/user-attachments/assets/c5b1ab50-3859-4d04-9cff-a9abad159c2e)
 
@@ -75,13 +77,15 @@ The **workflow** involves:
 
 ## Technologies Used
 
-- **Frontend**: ReactJS for a dynamic user interface.
-- **Backend**: Express.js and Next.js for media processing and model inference.
-- **Models**: 
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,fastapi,tensorflow,mongodb,figma,postman,git)](https://skillicons.dev)
+
+- **Frontend**: ReactJS for a dynamic user interface (Akhil & Jayanth), Figma for UI/UX (Jayanth)
+- **Backend**: FastAPI for setting up communications (Ayush)
+- **Models**: Tensorflow for model inference (Praneeth & Balaswitha)
   - **CNN** for image classification.
   - **3D CNN** for video analysis.
-- **Database**: MySQL for data storage.
-- **API**: PHP-based REST APIs for communication.
+- **Database**: MongoDB for data storage. (Ayush) 
+- **API**: REST APIs for communication. (Ayush & Akhil)
 
 ---
 
