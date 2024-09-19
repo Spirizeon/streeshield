@@ -1,0 +1,18 @@
+.CheckYourMediaButton{
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    border-radius: 87.097px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0px -2.613px 0px 0px rgba(0, 0, 0, 0.20) inset, 0px 0.871px 0px 0px rgba(255, 255, 255, 0.40) inset;
+    text-decoration: none;
+}
+
+.CheckYourMediaButton img{
+    width: 16px;
+    height: 16px;
+}
+

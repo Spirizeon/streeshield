@@ -1,0 +1,112 @@
+.popUpOuter{
+    position: fixed;
+    border-radius: 15.75px;
+    border: 1.575px solid var(--Stroke, #2B2B2B);
+    background: linear-gradient(122deg, #0E0E0E 0%, #050505 96.81%);
+    left: 16vw;
+    right: 16vw;
+    top: 10vh;
+    z-index: 4;
+    padding: 40px;
+}
+
+.PopUpBoxForReportCrime{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.EmblemBelowText{
+    color: #434343;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.PopUpUnSafeText{
+    color: #868686;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.RedShieldInPopUp{
+    width: 49px;
+    height: 58.2px;
+}
+
+.PopUpBoxBottomTextFirstLine{
+    color: #A7A7A7;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.PopUpBoxBottomTextHighlight{
+    color: #E1AA05;
+}
+
+.PopUpBoxBottomTextSecondLine{
+    color: #A7A7A7;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.ReportCyberText{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.ReportCyberCrimeButton{
+    display: flex;
+    gap: 12px;
+    border-radius: 4.8px;
+    background: #B31D1D;
+    box-shadow: 0px 0px 86.4px 0px rgba(179, 29, 29, 0.50);
+    padding: 12px 16px;
+}
+
+.NationalEmblemAndSubText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.PopUpShieldBoxAndBottomText{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.PopUpShieldAndText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 0.5px solid var(--Stroke, #2B2B2B);
+    background: linear-gradient(122deg, #0E0E0E 0%, #050505 96.81%);
+    padding: 12px;
+}
+
+.PopUpBoxBottomText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CrossIconInCrimePopUp{
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+}

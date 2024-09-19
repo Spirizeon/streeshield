@@ -1,0 +1,60 @@
+.PreviewTextInMediaPreview{
+    color: #E1AA05;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.FileNameInMediaPreview{
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.media-preview-box{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 4;
+    left: 16vw;
+    right: 16vw;
+    top: 10vh;
+    border-radius: 15.75px;
+    border: 1.575px solid var(--Stroke, #2B2B2B);
+    background: linear-gradient(122deg, #0E0E0E 0%, #050505 96.81%);
+    padding-top: 80px;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-bottom: 24px;
+}
+
+.PreviewTextAndFileNameInMediaPreview{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ImageInMediaPreview{
+    object-fit:cover;
+    height: 60vh;
+}
+
+.media-content{
+    display: flex;
+    justify-content: center;
+}
+
+.CrossIconInMediaPreview{
+    position: absolute;
+    z-index: 4;
+    top:32px;
+    right: 32px;
+}
+
+.VideoInMediaPreview{
+    height: 60vh;
+}

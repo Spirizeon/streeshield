@@ -1,0 +1,94 @@
+.WhiteCardInWhileUploadingAndSubText{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.WhiteCardInWhileUploading{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background:rgba(255,255, 255,0.88);
+    backdrop-filter: blur(30px);
+    padding: 12px 24px 12px 16px;
+}
+
+.HorizontalProgressBarInUploading{
+    min-width: 240px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.FileNameAndSize{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.FileName{
+    color: rgba(0, 0, 0, 0.40);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Size{
+    color: rgba(0, 0, 0, 0.70);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.SubTextInWhileUploading{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.AnalyzeTextInWhileUploading{
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #979797;
+}
+
+.AnalyzeButtonInWhileUploading{
+    display: flex;
+    border-radius: 8px;
+    background: #6F6F6F;
+    gap: 12px;
+    padding: 15.2px 30.4px;
+}
+
+.InnerSpotlightCardInWhileUploading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.WhileUploadingProgressSpotlightOuterBox{
+    position: relative;
+}
+
+.WhileUploadingProgressSpotlightCard{
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.FileNameSizeAndHorizontalProgressBar{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.MediaIconInWhileUploading{
+    opacity: 0.64;
+}

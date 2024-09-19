@@ -1,0 +1,53 @@
+.RealStoryImageAndContent{
+    display: flex;
+    gap: 120px;
+}
+
+.RealStoryImageAndContent img{
+    width: 30vw;
+    height: 42vw;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.RealStroiesAndImpact{
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 160px;
+}
+
+.RealStoryTextContent{
+    height: 42vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.RealStoryTextContent::-webkit-scrollbar{
+    display: none;
+}
+
+.GirlWords{
+    color: #C0C0C0;
+    font-family: "Arimo Hebrew Subset Italic";
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.GirlName li{
+    color: #00D17A;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.GirlInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

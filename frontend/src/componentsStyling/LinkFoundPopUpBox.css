@@ -1,0 +1,33 @@
+.LinkFoundPopUpBoxOuter{
+    position: fixed;
+    z-index: 4;
+    top: 24vh;
+    left: 16vw;
+    right: 16vw;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 15.75px;
+    border: 1.575px solid var(--Stroke, #2B2B2B);
+    background: linear-gradient(122deg, #0E0E0E 0%, #050505 96.81%);
+    padding: 40px;
+}
+
+.LinkInPopUp{
+    color: #E1AA05;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.LinkAndIconInPopUp{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.CrossIconDivInLinkPopUp{
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,104 @@
+.UploadHeader{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.uploadbutton img{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.uploadbutton{
+    border-radius: 8px;
+    background: #683FEA;
+    box-shadow: 0px 0px 144px 0px rgba(153, 23, 255, 0.50);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 32px;
+}
+
+.uploadbutton p{
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.UploadSectionSpotlight{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+.draganddroptext p{
+    color: #919191;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.dragdroptext,.uploadbuttontext{
+    text-decoration: underline;
+    color: #D8D8D8;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.filesizeformat p{
+    color: #434343;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.filesizeformat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.draganddroptext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.uploadsectiontotaltext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.UploadSectionSpotlightOuterBox{
+    position: relative;
+}
+
+
+.UploadSectionOuter{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 120px;
+    margin-top: 64px;
+}
+
+.UploadSectionBackButton{
+    display: flex;
+}

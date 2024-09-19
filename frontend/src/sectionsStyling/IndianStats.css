@@ -1,0 +1,92 @@
+.IndianStats{
+    margin-bottom: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.ChartOuter,.CasesCountOuter{
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(62, 62, 73, 0.10);
+    backdrop-filter: blur(30px);
+    padding: 24px;
+    flex: 1;
+}
+
+.CasesCountOuter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+.ChartAndCasesCount{
+    display: flex;
+    gap:40px;
+}
+
+.FIRText{
+    color: #EEB406;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.FIRButton{
+    padding: 8px 24px;
+    border-radius: 72px;
+    background: rgba(238, 180, 6, 0.16);
+}
+
+.ChartOuter img{
+    width: 100%;
+}
+
+.CountValue{
+    color: #FFF;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 103.68px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.BelowCountText{
+    color: #838383;
+    text-align: center;
+    font-family: "Carbon Bold";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.IndianStatsScrollAllData::-webkit-scrollbar{
+    display: none;
+}
+
+.IndianStatsScrollAllData{
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(62, 62, 73, 0.10);
+    backdrop-filter: blur(30px);
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    width: 100%; /* Take the full width inside the body */
+    box-sizing: border-box; /* Includes the padding and border in the width */
+}
+
+.IndianStatsTwoBoxAndScrollBox{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}

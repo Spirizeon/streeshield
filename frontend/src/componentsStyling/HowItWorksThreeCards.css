@@ -1,0 +1,72 @@
+.HowItWorksThreeCards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items:center;
+    align-items: stretch;
+    gap: 32px;
+}
+
+.HowItWorksCardText h3{
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.HowItWorksCardText p{
+    color: #434343;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+
+.HowItWorksCardText{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-in-how-it-works{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    position: relative;
+    padding-top: 120px;
+}
+
+.CardNumber{
+    position: absolute;
+    color: #EEB406;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 240px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    z-index: 2;
+    right:16px;
+    top: -120px;
+}
+
+.spotlight-card-outer{
+    position: relative;
+    margin-top: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.border-gradient-color{
+    border-radius: 1.5rem;
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    top: -1px;
+    background: linear-gradient(150deg, #9747FF 0%, #EDB306 98.54%);
+}

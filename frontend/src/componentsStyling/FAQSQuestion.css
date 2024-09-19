@@ -1,0 +1,17 @@
+.QuestionInFAQ{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.FAQSOuter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 51.2px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(30px);
+    padding: 12px 24px;
+}

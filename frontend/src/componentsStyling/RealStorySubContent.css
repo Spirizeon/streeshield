@@ -1,0 +1,21 @@
+.RealStorySubContent h3{
+    color: #FFC107;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.RealStorySubContent p{
+    color: #C0C0C0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.RealStorySubContent{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

@@ -1,0 +1,110 @@
+.MediaWhiteCardAndBottomText{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.UploadingProgressSpotlightCard{
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.MediaWhiteCard{
+    display: flex;
+    gap: 56px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: #FFF;
+    backdrop-filter: blur(30px);
+    padding: 12px 24px 12px 16px;
+}
+
+.MediaAndType{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.MediaName{
+    display: flex;
+    gap: 2px;
+}
+.MediaInsideName{
+    color: rgba(0, 0, 0, 0.70);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.PreviewText{
+    color: #E1AA05;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.DataSizeAndIcon{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.DataSize{
+    color: rgba(0, 0, 0, 0.70);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.AnalyseText{
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.AnalyseButton{
+    display: flex;
+    gap: 12px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #683FEA;
+    box-shadow: 0px 0px 144px 0px rgba(153, 23, 255, 0.50);
+}
+
+.UploadingProgressSpotlight{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.GreenBottomTextAndIcon{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.GreenBottomText{
+    color: #00D17A;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.UploadingProgressSpotlightOuterBox{
+    position: relative;
+}
+
+.AnalyseButtonOuter{
+    text-decoration: none;
+}
+
+.media-preview-content{
+    position: relative;
+}
+

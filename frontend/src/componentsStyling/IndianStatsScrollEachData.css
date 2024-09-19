@@ -1,0 +1,67 @@
+.TVChannelImgage{
+    width: 56px;
+    object-fit: cover;
+}
+
+.IndianStatsScrollEachData{
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: var(--card-background, #131419);
+    backdrop-filter: blur(30px);
+    padding: 24px;
+    
+    flex: 0 0 40%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.IndianStatsMessage{
+    color: #838383;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.IndianStatsMessagePerson{
+    color: #E1AA05;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: right;
+}
+
+.ReadArticleText{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: linear-gradient(97deg, #AFAFAF 35.47%, rgba(175, 175, 175, 0.00) 119.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.ReadArticleButton{
+    padding: 10px 20px;
+    border-radius: 52.258px;
+    border: 0.6px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0px -1.568px 0px 0px rgba(0, 0, 0, 0.20) inset, 0px 0.523px 0px 0px rgba(255, 255, 255, 0.40) inset;
+}
+
+.IndianStatsEachDataTop{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.IndianStatsEachDataBottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}

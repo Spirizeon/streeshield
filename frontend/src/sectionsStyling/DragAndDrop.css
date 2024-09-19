@@ -1,0 +1,41 @@
+.DragAndDrop{
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(11, 11, 15, 0.72);
+    backdrop-filter: blur(30px);
+    height: 64vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.DragDropText{
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.DropVectorTopLeft{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.DropVectorTopRight{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.DropVectorBottomLeft{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.DropVectorBottomRight{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}

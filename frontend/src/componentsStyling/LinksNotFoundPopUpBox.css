@@ -1,0 +1,42 @@
+.LinksNotFoundPopUpBox{
+    position: fixed;
+    z-index: 4;
+    top: 24vh;
+    left: 16vw;
+    right: 16vw;
+    padding: 40px;
+    border-radius: 15.75px;
+    border: 1.575px solid var(--Stroke, #2B2B2B);
+    background: linear-gradient(122deg, #0E0E0E 0%, #050505 96.81%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.NoLinksAreTextInPopUp{
+    color: #E1AA05;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.FoundTextInPopUp{
+    color: #E1AA05;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.LinksNotFoundText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NoLinksFoundCrossIconOuter{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}

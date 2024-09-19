@@ -1,0 +1,12 @@
+.FAQSection{
+    margin-bottom: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.FAQSAllQuestions{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

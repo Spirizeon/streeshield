@@ -1,0 +1,90 @@
+.StreeText{
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: A;
+    font-size: 160px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: capitalize;
+}
+
+.ShieldText{
+    font-size: 140px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.HeroSectionSubText{
+    color: #838383;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.HeroPageButtonTopAndTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.StreeAndShieldText{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+.ButtonTitleGroupAndSubtitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.HeroTextAndCheckMediaButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.HeroPageGirlImages img{
+    width: 44%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.HeroPageGirlImages{
+    display: flex;
+    justify-content: space-around;
+}
+
+.HeroSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 160px;
+}
+
+.HeroPageButtonTop{
+    position: relative;
+}
+
+.HeroPageButtonTopText{
+    position: absolute;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: linear-gradient(90deg, #FFF 0%, #6A6A6A 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    top: 84px;
+    left: 108px;
+}

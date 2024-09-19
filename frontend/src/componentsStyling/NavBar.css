@@ -1,0 +1,51 @@
+.NavBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.LogoOuter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AllNavLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+}
+
+.AllNavLinks p{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.LanguageChange{
+    display: flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(238, 180, 6, 0.04);
+    backdrop-filter: blur(30px);
+}
+
+.LanguageChange p{
+    color: #E1AA05;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.NavBarButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
