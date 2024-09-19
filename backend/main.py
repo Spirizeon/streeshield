@@ -160,7 +160,7 @@ def detector(file_data: bytes) -> int:
     prediction = model.predict(img_array)
 
     # Interpret the prediction (adjust according to your model's output)
-    return int(prediction*100)
+    return int(100 - (prediction*100))
 
 
 def extract_image_links(serpapi_response):
