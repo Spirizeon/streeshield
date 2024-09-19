@@ -1,4 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 from fastapi.responses import JSONResponse, StreamingResponse
 from motor.motor_asyncio import AsyncIOMotorClient
 from bson.objectid import ObjectId
@@ -21,6 +23,7 @@ model = load_model("final_model.h5")
 
 # MongoDB configuration
 MONGO_URL = "mongodb://localhost:27017"
+#MONGO_URL ="mongodb+srv://freshenide:ign4yYkgasZr9RQ8XEoMFFq72EVE3i@cluster0.dpikz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = AsyncIOMotorClient(MONGO_URL)
 db = client.your_database_name
 
@@ -181,22 +184,21 @@ async def get_file(file_id: str):
 
             # Read file content
             file_data = await grid_out.read()
-
+            
             # Fetch the results from MongoDB
             result = file.get("metadata",{}).get("result",{})
-    
             detection_result = file.get("metadata", {}).get("detection_result", {})
 
             return JSONResponse(content={
                 "file_id": file_id,
                 "detection_result": detection_result,
                 "search_result": extract_image_links(result),
+
             }, status_code=200)
         else:
             return JSONResponse(content={"message": "File not found"}, status_code=404)
     except Exception as e:
         return JSONResponse(content={"message": f"An error occurred: {str(e)}"}, status_code=500)
-
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
