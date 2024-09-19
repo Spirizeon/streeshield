@@ -160,7 +160,7 @@ def detector(file_data: bytes) -> int:
     prediction = model.predict(img_array)
 
     # Interpret the prediction (adjust according to your model's output)
-    return 1 if prediction > 0.5 else 0
+    return int(prediction*100)
 
 
 def extract_image_links(serpapi_response):
@@ -191,7 +191,7 @@ async def get_file(file_id: str):
 
             return JSONResponse(content={
                 "file_id": file_id,
-                "detection_result": detection_result,
+                "percentage_morphed": detection_result,
                 "search_result": extract_image_links(result),
 
             }, status_code=200)

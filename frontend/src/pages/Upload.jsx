@@ -15,32 +15,46 @@ const Upload = () => {
     const [fileUrl, setFileUrl] = useState(null); // Store file URL for display
 
     // Simulate random success/failure for the file upload and show progress
-    const simulateUpload = (file) => {
-        setUploadStatus('uploading');
-        setUploadPercentage(0);
-        setUploadedFile(file); // Ensure file is set before starting upload
+    // Upload file to FastAPI backend and show progress
+const simulateUpload = (file) => {
+    setUploadStatus('uploading');
+    setUploadPercentage(0);
+    setUploadedFile(file); // Ensure file is set before starting upload
 
-        console.log('Simulating upload for file:', file.name);
+    console.log('Uploading file:', file.name);
 
-        const interval = setInterval(() => {
-            setUploadPercentage((prev) => {
-                if (prev >= 100) {
-                    clearInterval(interval);
+    // Prepare the form data
+    const formData = new FormData();
+    formData.append('file', file);
 
-                    const isSuccess = Math.random() > 0.3; // Simulate success 70% of the time
-                    if (isSuccess) {
-                        setUploadStatus('uploaded'); // Set to uploaded after success
-                        console.log('Upload succeeded.');
-                    } else {
-                        console.log('Upload failed.');
-                        setUploadStatus('failed'); // Set status to failed
-                        setUploadedFile(null); // Clear file if upload fails
-                    }
-                }
-                return prev + 10; // Increment by 10%
-            });
-        }, 200);
-    };
+    // Use fetch API to send the file to FastAPI
+    fetch('http://localhost:8000/upload', {
+        method: 'POST',
+        body: formData,
+    })
+    .then((response) => response.json()) // Parse JSON response
+    .then((data) => {
+        console.log('Response from FastAPI:', data); // Log the response
+        setUploadStatus('uploaded'); // Set to uploaded after success
+        setUploadPercentage(100); // Set upload progress to 100%
+    })
+    .catch((error) => {
+        console.error('Upload failed:', error); // Log the error
+        setUploadStatus('failed'); // Set status to failed
+        setUploadedFile(null); // Clear file if upload fails
+    });
+
+    // Simulate progress
+    const interval = setInterval(() => {
+        setUploadPercentage((prev) => {
+            if (prev >= 100) {
+                clearInterval(interval); // Stop interval when progress is 100%
+            }
+            return Math.min(prev + 10, 100); // Increment by 10% each time
+        });
+    }, 200);
+};
+
 
     // Function that triggers on file drop
     const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
