@@ -8,7 +8,6 @@ WORKDIR /app
 COPY . .
 
 # Expose ports for both backend and frontend
-EXPOSE 8000 5173
 
 # Install dependencies for Python (backend)
 RUN apt update && apt install -y python3 python3-pip
@@ -27,6 +26,8 @@ WORKDIR /app/frontend
 # Install frontend dependencies
 RUN npm install
 WORKDIR /app
+
+EXPOSE 5173 8000
 
 # Set up for running backend and frontend concurrently
 CMD [ "sh", "-c", "npm --prefix ./frontend run dev -- --host 0.0.0.0 & uvicorn backend.main:app --host 0.0.0.0 --reload" ]
