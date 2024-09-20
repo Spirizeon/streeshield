@@ -14,8 +14,9 @@ EXPOSE 8000 5173
 RUN apt update && apt install -y python3 python3-pip
 WORKDIR /app/backend
 # Install Python dependencies
-RUN pip install -r requirements.txt
-RUN source env/bin/activate
+RUN pip install -r requirements.txt --break-system-packages
+RUN chmod +x env/bin/activate
+RUN ./env/bin/activate
 WORKDIR /app
 # Install Node.js and npm for Next.js (frontend)
 RUN apt install -y curl && \
@@ -28,5 +29,5 @@ RUN npm install
 WORKDIR /app
 
 # Set up for running backend and frontend concurrently
-CMD [ "sh", "-c", "npm --prefix ./frontend run dev & uvicorn backend.main:app --host 0.0.0.0 --reload" ]
+CMD [ "sh", "-c", "npm --prefix ./frontend run dev -- --host 0.0.0.0 & uvicorn backend.main:app --host 0.0.0.0 --reload" ]
 
