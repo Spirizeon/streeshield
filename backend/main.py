@@ -18,8 +18,8 @@ from PIL import Image
 import numpy as np
 
 # Load the pre-trained model
-model = load_model("./backend/final_model.h5")
-#model = load_model("final_model.h5")
+#model = load_model("./backend/final_model.h5")
+model = load_model("final_model.h5")
 
 
 # MongoDB configuration
