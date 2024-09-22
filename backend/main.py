@@ -18,12 +18,12 @@ from PIL import Image
 import numpy as np
 
 # Load the pre-trained model
-model = load_model("./backend/final_model.h5")
+model = load_model("backend/final_model.h5")
 #model = load_model("final_model.h5")
 
 
 # MongoDB configuration
-MONGO_URL = "mongodb://localhost:27017"
+MONGO_URL = "mongodb://0.0.0.0:27017"
 #MONGO_URL ="mongodb+srv://freshenide:ign4yYkgasZr9RQ8XEoMFFq72EVE3i@cluster0.dpikz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = AsyncIOMotorClient(MONGO_URL)
 db = client.your_database_name
