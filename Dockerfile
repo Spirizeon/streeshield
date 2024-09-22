@@ -37,5 +37,5 @@ RUN chmod -R 777 /app
 EXPOSE 5173 8000 27017
 
 # Start MongoDB in the background, then start frontend and backend concurrently
-CMD ["sh", "-c", "mongod --fork --logpath /var/log/mongodb.log --dbpath /var/lib/mongodb && npm --prefix ./frontend run dev -- --host 0.0.0.0 & uvicorn backend.main:app --host 0.0.0.0 --reload"]
+CMD ["sh", "-c", "mongod --bind_ip 0.0.0.0 --port 27017 --fork --logpath /var/log/mongodb.log --dbpath /var/lib/mongodb && npm --prefix ./frontend run dev -- --host 0.0.0.0 & uvicorn backend.main:app --host 0.0.0.0 --reload"]
 
