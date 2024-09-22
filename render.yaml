@@ -22,7 +22,8 @@ services:
   - type: pserv
     name: mongodb
     env: docker
-    image: "mongo:7.0"
+    buildCommand: docker build -t mongodb -f frontend/Dockerfile . 
+    startCommand: npm --prefix frontend/ run dev
     disk:
       name: mongodb_data
       mountPath: /data/db
