@@ -19,11 +19,11 @@ import numpy as np
 
 # Load the pre-trained model
 #model = load_model("final_model.h5")
-model = load_model("final_model.h5")
+model = load_model("backend/final_model.h5")
 
 
 # MongoDB configuration
-MONGO_URL = "mongodb://mongodb:27017"
+MONGO_URL = "mongodb://localhost:27017"
 #MONGO_URL ="mongodb+srv://freshenide:ign4yYkgasZr9RQ8XEoMFFq72EVE3i@cluster0.dpikz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = AsyncIOMotorClient(MONGO_URL)
 db = client.your_database_name
@@ -123,7 +123,7 @@ async def upload_file(file: UploadFile = File(...)):
 
     # Process the image (requires ImgBB and SerpApi keys)
     imgbb_api_key = "292c53ed71670d59e2df7ea64844cd8e"  # Replace with your ImgBB API key
-    serpapi_api_key = "eaf3303f7237e5c9e8e37a44fa104abb83bf90df185dc7bc7bf552b8e1f0b987"  # Replace with your SerpApi API key
+    serpapi_api_key = "dbcb4a267eca8a0ccc51b793d9741f1c724ce560b6ee5deb5f8d76acfebeefec"  # Replace with your SerpApi API key
 
     result = process_image(contents, imgbb_api_key, serpapi_api_key)
     detection_result = detector(contents)  # Assuming `detector` processes the image file
