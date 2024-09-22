@@ -22,7 +22,7 @@ services:
   - type: pserv
     name: mongodb
     env: docker
-    image: mongo:7.0
+    image: "mongo:7.0"
     disk:
       name: mongodb_data
       mountPath: /data/db
