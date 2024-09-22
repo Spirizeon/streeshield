@@ -1,1 +1,2 @@
-FROM mongo:7.0
+FROM node:18-alpine
+EXPOSE 5173

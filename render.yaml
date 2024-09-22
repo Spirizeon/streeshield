@@ -17,7 +17,6 @@ services:
     numInstances: 1
     region: oregon
     plan: starter
-    containerPort: 8000
 
   - type: web
     name: frontend
@@ -31,7 +30,6 @@ services:
     numInstances: 1
     region: oregon
     plan: starter
-    containerPort: 5173
 
   - type: pserv
     name: mongodb
@@ -49,4 +47,3 @@ services:
         value: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017
     region: oregon
     plan: starter
-    containerPort: 27017
