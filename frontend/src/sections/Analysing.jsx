@@ -9,8 +9,13 @@ import "../sectionsStyling/Analysing.css";
 import BackHomeButton from "../components/BackHomeButton";
 
 import { NavLink } from 'react-router-dom';
+
+import { useLocation } from 'react-router-dom';
+
 const Analysing = () => {
   const [progress, setProgress] = useState(0);
+  const location = useLocation();
+  const { percentageMorphed, searchResult } = location.state || {};
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,7 +60,8 @@ const Analysing = () => {
                 </div>
               </div>
               {progress === 100 ? (
-                <NavLink to="/result">
+                <NavLink to="/result"
+                state={{ percentageMorphed, searchResult }}>
                   <AnalysingButton textColor="#FFF" backgroundColor="#00D17A" Icon={ActiveSheild} />
                 </NavLink>
               ) : (
