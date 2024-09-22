@@ -6,15 +6,21 @@ import MediaIcon from "../assets/MediaIcon.svg";
 import "../sectionsStyling/UploadingProgress.css";
 import AnalyseIcon from "../assets/AnalyseIcon.svg";
 import MediaPreview from '../components/MediaPreview';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CrossIcon from "../assets/CrossIcon.svg";
 
-const UploadingProgress = ({ fileName, fileSize, fileUrl }) => {
+const UploadingProgress = ({ fileName, fileSize, fileUrl, percentageMorphed, searchResult }) => {
   const [showPreview, setShowPreview] = useState(false); // State to control the preview modal
+  const navigate = useNavigate(); // Use useNavigate hook to programmatically navigate
 
   // Function to toggle the preview modal
   const togglePreview = () => {
     setShowPreview(!showPreview);
+  };
+
+  // Function to handle navigation to /analyse and pass the data
+  const handleAnalyseClick = () => {
+    navigate('/analyse', { state: { percentageMorphed, searchResult } });
   };
 
   return (
@@ -45,22 +51,23 @@ const UploadingProgress = ({ fileName, fileSize, fileUrl }) => {
                 <p className='GreenBottomText'>Successfully Uploaded</p>
               </div>
             </div>
-            <NavLink to="/analyse" className="AnalyseButtonOuter">
+            {/* Replacing NavLink with a button that triggers the navigation */}
+            <div className="AnalyseButtonOuter" onClick={handleAnalyseClick}>
               <div className='AnalyseButton'>
                 <img src={AnalyseIcon} alt="" />
                 <p className='AnalyseText'>Analyse</p>
               </div>
-            </NavLink>
+            </div>
           </div>
         </SpotlightCard>
       </div>
-      
+
       {/* Conditionally render the MediaPreview component as a modal */}
       {showPreview && (
         <div className="media-preview-modal">
           <div className="media-preview-content">
             <div className="PopUpBackgroundBlur" onClick={togglePreview}></div>
-            <MediaPreview fileUrl={fileUrl} fileName={fileName} togglePreview={togglePreview}/>
+            <MediaPreview fileUrl={fileUrl} fileName={fileName} togglePreview={togglePreview} />
           </div>
         </div>
       )}

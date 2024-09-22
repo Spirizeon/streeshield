@@ -39,8 +39,9 @@
 }
 
 .ImageInMediaPreview{
-    object-fit:cover;
-    height: 60vh;
+    object-fit:contain;
+    max-height: 60vh;
+    width: 46vw;
 }
 
 .media-content{

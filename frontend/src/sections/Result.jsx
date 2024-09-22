@@ -15,10 +15,15 @@ import LinksNotFoundPopUpBox from '../components/LinksNotFoundPopUpBox.jsx';
 import DownloadLogo from "../assets/DownloadLogo.svg";
 import ReAnalyseLogo from "../assets/ReAnalyseLogo.svg"
 
+import { useLocation } from 'react-router-dom';
+
 const Result = () => {
   const [isPopUpVisible, setIsPopUpVisible] = useState(false); // State to control the report pop-up visibility
   const [isLinkPopUpVisible, setIsLinkPopUpVisible] = useState(false); // State to control the links pop-up visibility
 
+
+  const location = useLocation();
+  const { percentageMorphed, searchResult } = location.state || {};
   // Function to toggle the report pop-up visibility
   const handleReportClick = () => {
     setIsPopUpVisible(true);
@@ -52,7 +57,7 @@ const Result = () => {
           <SpotlightCard className="custom-spotlight-card ResultSectionSpotlight" spotlightColor="rgba(0, 229, 255, 0)">
             <div className='CircleProgressBarShieldLinks'>
               <div className='CircleProgressBarWithButton'>
-                <OuterCircularProgressBar />
+                <OuterCircularProgressBar percentage={percentageMorphed}/>
                 <div className='ReportButton' onClick={handleReportClick}> {/* Add onClick handler */}
                   <p className='ReportText'>Report</p>
                   <img src={ReportIcon} alt="Report Icon" />
@@ -60,8 +65,8 @@ const Result = () => {
               </div>
               <div className="ShieldAndLinks">
                 <div className='Shield'>
-                  <p className='ShieldAboveText'>UNSAFE</p>
-                  <img src={RedSheild} alt="Red Shield" />
+                  <p className='ShieldAboveText'>{percentageMorphed>49?"UNSAFE":"SAFE"}</p>
+                  <img src={percentageMorphed>49?RedSheild:GreenSheild} alt="Red Shield" />
                 </div>
                 <div className='UploadAndGetLinks'>
                   <p className='WhereUploadedText'>Where Uploaded?</p>
@@ -96,7 +101,6 @@ const Result = () => {
         </div>
 
       </div>
-
       {/* Conditionally render the PopUpBoxForReportCrime component */}
       {isPopUpVisible && (
         <div onClick={e => e.stopPropagation()}>
@@ -109,8 +113,10 @@ const Result = () => {
       {isLinkPopUpVisible && (
         <div onClick={e => e.stopPropagation()}>
           <div className='PopUpBackgroundBlur' onClick={closeLinksPopUp}></div>
-          <LinkFoundPopUpBox closePopUp={closeLinksPopUp} />
-          {/* <LinksNotFoundPopUpBox closePopUp={closeLinksPopUp}/> */}
+          {percentageMorphed>49?
+          <LinkFoundPopUpBox closePopUp={closeLinksPopUp} searchResult={searchResult}/>:
+          <LinksNotFoundPopUpBox closePopUp={closeLinksPopUp}/>
+          }
         </div>
       )}
     </div>

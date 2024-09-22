@@ -14,7 +14,10 @@ const Upload = () => {
     const [uploadedFile, setUploadedFile] = useState(null); // Store the actual file
     const [fileUrl, setFileUrl] = useState(null); // Store file URL for display
 
-    // Simulate random success/failure for the file upload and show progress
+    // State variables to store percentage_morphed and search_result
+    const [percentageMorphed, setPercentageMorphed] = useState(0);
+    const [searchResult, setSearchResult] = useState([]);
+
     // Upload file to FastAPI backend and show progress
 const simulateUpload = (file) => {
     setUploadStatus('uploading');
@@ -34,9 +37,13 @@ const simulateUpload = (file) => {
     })
     .then((response) => response.json()) // Parse JSON response
     .then((data) => {
-        console.log('Response from FastAPI:', data); // Log the response
-        setUploadStatus('uploaded'); // Set to uploaded after success
-        setUploadPercentage(100); // Set upload progress to 100%
+        console.log('Response from FastAPI:', data);
+            setUploadStatus('uploaded');
+            setUploadPercentage(100);
+
+            // Store percentage_morphed and search_result in state
+            setPercentageMorphed(data.percentage_morphed);
+            setSearchResult(data.search_result);
     })
     .catch((error) => {
         console.error('Upload failed:', error); // Log the error
@@ -143,16 +150,13 @@ const simulateUpload = (file) => {
                                 fileName={uploadedFile?.name} 
                                 fileSize={(uploadedFile?.size / 1024 / 1024).toFixed(2)} 
                                 fileUrl={fileUrl}
+                                percentageMorphed={percentageMorphed}
+                                searchResult={searchResult}
                             />
                         </div>
                     ) : uploadStatus === 'failed' ? (
                         <p>Upload Failed. Please try again.</p>
-                    ) : (
-                        <div>
-                            {console.log("Unexpected uploadStatus:", uploadStatus)}
-                            <p>Unexpected upload status, please try again. {uploadStatus} {uploadedFile ? 'File present' : 'No file'}</p>
-                        </div>
-                    )
+                    ) : null
                 }
             </div>
         </div>
