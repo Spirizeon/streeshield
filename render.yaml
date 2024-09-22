@@ -2,31 +2,51 @@ services:
   - type: web
     name: backend
     env: docker
-    buildCommand: docker build -t backend -f backend/Dockerfile .
-    startCommand: uvicorn main:app --host 0.0.0.0
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    disk:
+      name: backend-data
+      mountPath: /app/backend
     envVars:
       - key: MONGODB_URI
-        value: mongodb://mongodb:27017
-    dockerContext: .
-    dockerfilePath: backend/Dockerfile
+        fromService:
+          type: pserv
+          name: mongodb
+          envVarKey: MONGODB_URL
+    healthCheckPath: /
+    numInstances: 1
+    region: oregon
+    plan: starter
+    containerPort: 8000
 
   - type: web
     name: frontend
-    env: node
-    buildCommand: cd frontend && npm install
-    envVars:
-      - key: PORT
-        value: 5173
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: .
+    disk:
+      name: frontend-data
+      mountPath: /app/frontend
+    healthCheckPath: /
+    numInstances: 1
+    region: oregon
+    plan: starter
+    containerPort: 5173
 
   - type: pserv
     name: mongodb
     env: docker
-    buildCommand: docker build -t mongodb -f frontend/Dockerfile . 
+    dockerfilePath: ./Dockerfile.mongodb
     disk:
-      name: mongodb_data
+      name: mongodb-data
       mountPath: /data/db
     envVars:
       - key: MONGO_INITDB_ROOT_USERNAME
-        value: root
+        generateValue: true
       - key: MONGO_INITDB_ROOT_PASSWORD
         generateValue: true
+      - key: MONGODB_URL
+        value: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017
+    region: oregon
+    plan: starter
+    containerPort: 27017
