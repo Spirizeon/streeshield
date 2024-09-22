@@ -1,32 +1,33 @@
 services:
-  backend:
-    build:
-      context: .
-      dockerfile: backend/Dockerfile
-    volumes:
-      - ./backend:/app/backend
-    ports:
-      - "8000:8000"
-    depends_on:
-      - mongodb
-    environment:
-      - MONGODB_URI=mongodb://mongodb:27017  # MongoDB connection
-    command: uvicorn main:app --host 0.0.0.0 --reload
+  - type: web
+    name: backend
+    env: docker
+    buildCommand: docker build -t backend -f backend/Dockerfile .
+    startCommand: uvicorn main:app --host 0.0.0.0
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb://mongodb:27017
+    dockerContext: .
+    dockerfilePath: backend/Dockerfile
 
-  frontend:
-    image: node:18-alpine
-    working_dir: /app/frontend
-    volumes:
-      - ./frontend:/app/frontend
-    ports:
-      - "5173:5173"
-    command: npm run dev -- --host 0.0.0.0
+  - type: web
+    name: frontend
+    env: node
+    buildCommand: cd frontend && npm install
+    startCommand: cd frontend && npm run dev -- --host 0.0.0.0
+    envVars:
+      - key: PORT
+        value: 5173
 
-  mongodb:
+  - type: pserv
+    name: mongodb
+    env: docker
     image: mongo:7.0
-    volumes:
-      - ./mongodb:/data/db
-    ports:
-      - "27017:27017"
-    command: mongod --bind_ip_all
-
+    disk:
+      name: mongodb_data
+      mountPath: /data/db
+    envVars:
+      - key: MONGO_INITDB_ROOT_USERNAME
+        value: root
+      - key: MONGO_INITDB_ROOT_PASSWORD
+        generateValue: true
