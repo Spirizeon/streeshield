@@ -2,13 +2,12 @@
 FROM debian:bookworm
 WORKDIR /app
 COPY . .
+RUN curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | gpg --dearmor -o /usr/share/keyrings/mongodb-server-7.0.gpg && echo "deb [signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg] https://repo.mongodb.org/apt/debian $(lsb_release -cs)/mongodb-org/7.0 main" | tee /etc/apt/sources.list.d/mongodb-org-7.0.list && curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt update && apt-get update && apt install -y python3 python3-pip gnupg curl wget ca-certificates lsb-release mongodb-org nodejs
 
 WORKDIR /app/backend
 RUN pip install --no-cache-dir uvicorn python-multipart opencv-python tensorflow fastapi pillow motor pydantic[core] --break-system-packages 
 
-WORKDIR /app
-RUN curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | gpg --dearmor -o /usr/share/keyrings/mongodb-server-7.0.gpg && echo "deb [signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg] https://repo.mongodb.org/apt/debian $(lsb_release -cs)/mongodb-org/7.0 main" | tee /etc/apt/sources.list.d/mongodb-org-7.0.list && curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
 # Install frontend dependencies
 WORKDIR /app/frontend
