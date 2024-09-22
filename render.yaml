@@ -14,7 +14,6 @@ services:
     name: frontend
     env: node
     buildCommand: cd frontend && npm install
-    startCommand: cd frontend && npm run dev -- --host 0.0.0.0
     envVars:
       - key: PORT
         value: 5173
@@ -23,7 +22,6 @@ services:
     name: mongodb
     env: docker
     buildCommand: docker build -t mongodb -f frontend/Dockerfile . 
-    startCommand: npm --prefix frontend/ run dev
     disk:
       name: mongodb_data
       mountPath: /data/db
