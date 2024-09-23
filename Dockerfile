@@ -1,5 +1,5 @@
 FROM debian:bookworm
-EXPOSE 5173 
+EXPOSE 5173 8000 27017
 # Set working directory
 WORKDIR /app
 
