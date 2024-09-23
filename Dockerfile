@@ -1,5 +1,5 @@
 FROM debian:bookworm
-EXPOSE 5173 8000
+EXPOSE 5173 
 # Set working directory
 WORKDIR /app
 
@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir uvicorn python-multipart opencv-python tensorflow
 # Install frontend dependencies
 WORKDIR /app/frontend
 RUN npm install --production && npm cache clean --force
-
+RUN npm install -D vite
 # Set permissions
 WORKDIR /app
 RUN chmod -R 777 /app
