@@ -26,5 +26,5 @@ WORKDIR /app
 RUN chmod -R 777 /app
 
 # Start services
-CMD ["sh", "-c", "mongod --bind_ip 0.0.0.0 --port 27017 --fork --logpath /var/log/mongodb.log --dbpath /var/lib/mongodb && npm --prefix ./frontend run dev -- --host 0.0.0.0 & uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload && tail -f /var/log/mongodb.log"]
+CMD ["sh", "-c", "mongod --bind_ip 0.0.0.0 --port 27017 --fork --logpath /var/log/mongodb.log --dbpath /var/lib/mongodb && npm --prefix ./frontend run dev -- --host 0.0.0.0 --port 5173 & uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload && tail -f /var/log/mongodb.log"]
 
