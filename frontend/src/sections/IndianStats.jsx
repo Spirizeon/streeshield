@@ -20,7 +20,7 @@ const IndianStats = () => {
       <div className='IndianStatsTwoBoxAndScrollBox'>
         <div className='ChartAndCasesCount'>
           <div className='ChartOuter'>
-            <img src={ChartImage} alt="" />
+            <img className='ChartImage' src={ChartImage} alt="" />
           </div>
           <div className='CasesCountOuter'>
             <div className='FIRButton'>
@@ -37,7 +37,7 @@ const IndianStats = () => {
               />
               +
             </p>
-            <p className='BelowCountText'>Cases are registering every year</p>
+            <p className='BelowCountText'><span>Cases are registering</span> <span>every year</span></p>
           </div>
         </div>
         <div className='IndianStatsScrollAllData'>

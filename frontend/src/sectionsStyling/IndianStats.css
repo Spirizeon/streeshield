@@ -5,6 +5,7 @@
     gap: 64px;
 }
 
+
 .ChartOuter,.CasesCountOuter{
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.10);
@@ -79,8 +80,8 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 
-    width: 100%; /* Take the full width inside the body */
-    box-sizing: border-box; /* Includes the padding and border in the width */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .IndianStatsTwoBoxAndScrollBox{
@@ -89,4 +90,66 @@
     gap: 40px;
     justify-content: center;
     align-items: center;
+}
+
+@media(max-width:1240px){
+    .FIRText{
+        font-size: 32px;
+    }
+    .CountValue{
+        font-size: 72px;
+    }
+    .BelowCountText{
+        font-size: 28px;
+    }
+    .CasesCountOuter{
+        gap: 24px;
+    }
+}
+
+@media(max-width:1080px){
+    .ChartAndCasesCount{
+        flex-direction: column;
+        align-items: center;
+    }
+    .BelowCountText{
+        display: flex;
+        flex-direction: column;
+    }
+    .ChartOuter{
+        width: 80%;
+    }
+    .CasesCountOuter{
+        width: 80%;
+    }
+}
+
+@media(max-width:720px){
+    .ChartAndCasesCount,.IndianStatsTwoBoxAndScrollBox{
+        gap: 24px;
+    }
+    .FIRText{
+        font-size: 24px;
+    }
+    .FIRButton{
+        padding: 4px 16px;
+    }
+    .CountValue{
+        font-size: 56px;
+    }
+    .BelowCountText{
+        font-size: 20px;
+    }
+    .ChartOuter{
+        width: 80%;
+    }
+    .CasesCountOuter{
+        width: 80%;
+    }
+}
+
+@media(max-width:560px){
+    .IndianStatsScrollAllData{
+        padding: 16px;
+    }
 }

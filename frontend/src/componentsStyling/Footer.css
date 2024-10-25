@@ -107,3 +107,51 @@
     flex-direction: column;
     gap: 24px;
 }
+
+@media(max-width:1080px){
+    .FooterTopRight{
+        gap: 80px;
+    }
+}
+
+@media(max-width:720px){
+    .FooterTopRight{
+        flex-direction: column;
+    }
+    .FooterTopRight{
+        gap: 64px;
+    }
+    .FooterQuickLinks,.FooterSupport{
+        gap: 19.2px;
+    }
+}
+
+@media(max-width:560px){
+    .LogoInFooter{
+        width:134px;
+    }
+    .LanguageChange{
+        padding: 6px 8px;
+    }
+    .LanguageChange p{
+        font-size: 14px;
+    }
+    .LanguageChange img{
+        width: 14px;
+    }
+    .FooterQuickLinks h3, .FooterSupport h3 {
+        font-size: 16px;
+    }
+    .FooterQuickLinks p, .FooterSupport p{
+        font-size: 12.8px;
+    }
+    .FooterQuickLinks, .FooterSupport {
+        gap: 14px;
+    }
+    .FooterSocialMediaThreeIcons img{
+        width: 20px;
+    }
+    .FooterBottomCopyWrite p,.FooterBottomLinks p{
+        font-size: 12px;
+    }
+}

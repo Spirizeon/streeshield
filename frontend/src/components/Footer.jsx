@@ -12,7 +12,7 @@ const Footer = () => {
         <div className='Footer'>
             <div className='FooterTop'>
                 <div className='FooterTopLeft'>
-                    <img src={MainLogo} alt="" />
+                    <img src={MainLogo} alt="" className='LogoInFooter'/>
                     <button className='LanguageChange'>
                         <img src={LanguageLogo} alt="" />
                         <p>EN</p>

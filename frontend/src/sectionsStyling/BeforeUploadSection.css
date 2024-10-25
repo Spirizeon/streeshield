@@ -39,6 +39,16 @@
     padding-bottom: 3rem;
     padding-top: 3rem;
 }
+
+.clicktouploadtext p{
+    font-size: 24px;
+    color: #919191;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 .draganddroptext p{
     color: #919191;
     font-size: 24px;
@@ -101,4 +111,43 @@
 
 .UploadSectionBackButton{
     display: flex;
+}
+
+@media(max-width:840px){
+    .BigUploadButton{
+        width: 78.4px;
+    }
+    .uploadbutton p{
+        font-size: 22.4px;
+    }
+    .uploadbutton img{
+        width: 26px;
+    }
+    .uploadbutton{
+        padding: 12.8px 25.6px;
+    }
+}
+
+@media(max-width:560px){
+    .BigUploadButton{
+        width: 62px;
+    }
+    .uploadbutton p{
+        font-size: 19.2px;
+    }
+    .uploadbutton img{
+        width: 22px;
+    }
+    .uploadbutton{
+        padding: 8.4px 21.6px;
+    }
+    .UploadSectionSpotlight{
+        gap: 24px;
+    }
+    .clicktouploadtext p,.uploadbuttontext{
+        font-size: 19.2px;
+    }
+    .filesizeformat p{
+        font-size: 14px;
+    }
 }

@@ -8,6 +8,38 @@
 body{
     background: var(--Background, #0B0B0F);
     padding: 32px 160px;
+    padding-top: 0px;
     overflow-x: clip;
     box-sizing: border-box;
 }
+
+@media(max-width:1080px){
+    body{
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
+
+@media(max-width:840px){
+    body{
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media(max-width:720px){
+    body{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media(max-width:560px){
+    body{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+/*
+1240px,1080px,840px 
+ */

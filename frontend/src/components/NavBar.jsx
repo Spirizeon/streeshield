@@ -3,6 +3,7 @@ import MainLogo from "../assets/MainLogo.svg";
 import LanguageLogo from "../assets/language-logo.svg";
 import "../componentsStyling/NavBar.css";
 import CheckYourMediaButton from './CheckYourMediaButton';
+import Hambargar from "../assets/Hambargar.svg"
 
 const NavBar = () => {
   return (
@@ -21,7 +22,8 @@ const NavBar = () => {
                 <img src={LanguageLogo} alt="" />
                 <p>EN</p>
             </button>
-            <CheckYourMediaButton/>
+            <div className='CheckMediaInNavBar'><CheckYourMediaButton/></div>
+            <img src={Hambargar} alt="" className='Hambargar' />
         </div>
     </nav>
   )

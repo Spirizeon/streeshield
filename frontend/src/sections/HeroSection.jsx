@@ -10,21 +10,20 @@ const HeroSection = () => {
     <div className='HeroSection'>
       <div className='HeroTextAndCheckMediaButton'>
         <div className='ButtonTitleGroupAndSubtitle'>
-            <div className='HeroPageButtonTopAndTitle'>
-                <div className='HeroPageButtonTop'>
-                  <p className='HeroPageButtonTopText'>True Identity Check</p>
-                    <img src={HeroPageButtonTop} alt="" />
-                </div>
-                <h1 className='StreeAndShieldText'><span className='StreeText'>स्त्री</span> <span className='ShieldText'>Shield</span></h1>
+          <div className='HeroPageButtonTopAndTitle'>
+            <div className='HeroPageButtonTop'>
+              <img src={HeroPageButtonTop} alt="" />
             </div>
-            <p className='HeroSectionSubText'>Protecting Women's Identities in the Digital World.</p>
+            <h1 className='StreeAndShieldText'><span className='StreeText'>स्त्री</span> <span className='ShieldText'>Shield</span></h1>
+          </div>
+          <p className='HeroSectionSubText'>Protecting Women's Identities in the Digital World.</p>
         </div>
-        <CheckYourMediaButton/>
+        <CheckYourMediaButton />
       </div>
-      {/* <div className='HeroPageGirlImages'>
-        <img src={GirlImageOneHeroPage} alt="" />
-        <img src={GirlImageTwoHeroPage} alt="" />
-      </div> */}
+      <div className='HeroPageGirlImages'>
+        <img src={GirlImageOneHeroPage} alt="" className='FirstImageInHeroSection'/>
+        <img src={GirlImageTwoHeroPage} alt="" className='SecondImageInHeroSection'/>
+      </div>
     </div>
   )
 }

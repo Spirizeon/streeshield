@@ -5,7 +5,7 @@
     line-height: normal;
 }
 
-.FAQSOuter{
+.FAQQuestionAndIcon{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,4 +14,37 @@
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(30px);
     padding: 12px 24px;
+    cursor: pointer;
+}
+
+.FAQAnswer{
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(30px);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 24px 16px;
+}
+
+.FAQOuter{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media(max-width:560px){
+    .QuestionInFAQ{
+        font-size: 16px;
+    }
+    .FAQArrowBeforeClick{
+        width: 25.6px;
+    }
+    .FAQQuestionAndIcon{
+        padding: 9.6px 19.2px;
+    }
+    .FAQAnswer{
+        font-size: 16px;
+        padding: 19.2px 12.8px;
+    }
 }

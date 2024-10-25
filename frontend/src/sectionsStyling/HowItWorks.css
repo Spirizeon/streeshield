@@ -1,3 +1,11 @@
 .HowItWorks{
     margin-bottom: 160px;
 }
+
+@media(max-width:840px){
+    .HowItWorks{
+        display: flex;
+        flex-direction: column;
+        gap:24px;
+    }
+}

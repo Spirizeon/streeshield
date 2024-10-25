@@ -1,5 +1,5 @@
 .ResultSectionOuter{
-    margin-top: 60px;
+    margin-top: 160px;
     margin-bottom: 120px;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,7 @@
 .CircleProgressBarShieldLinks{
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 }
 
 .CircleProgressBarWithButton{
@@ -66,6 +67,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: center;
 }
 
 .GetLinks{
@@ -76,6 +78,7 @@
     background: #683FEA;
     box-shadow: 0px 0px 86.4px 0px rgba(153, 23, 255, 0.50);
     align-items: center;
+    cursor: pointer;
 }
 .GetLinks p{
     color: #FFF;
@@ -89,7 +92,6 @@
 .PhotosAndHeatMap{
     display: flex;
     align-items: center;
-    justify-content: space-around;
     padding: 24px;
     border-radius: 15.75px;
     border: 1.575px solid var(--Stroke, #2B2B2B);
@@ -99,18 +101,13 @@
 .PhotosOfUploaded{
     display: flex;
     gap: 24px;
-    justify-content: flex-start; /* Align items without extra space */
-    align-items: center; /* Align items vertically */
-    width: auto; 
-    width: fit-content;
 }
 
 .PhotosOfUploaded img{
     width: 32%;
     border-radius: 14px;
-    flex-shrink: 0;
-    flex-grow: 0;
 }
+
 
 .ResultSectionSpotlight{
     display: flex;
@@ -124,6 +121,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    white-space: nowrap;
 }
 
 .AnalysisText{
@@ -178,6 +176,8 @@
     border-radius: 4.8px;
     background: #B31D1D;
     box-shadow: 0px 0px 86.4px 0px rgba(179, 29, 29, 0.50);
+    cursor: pointer;
+    
 }
 
 .PopUpBackgroundBlur{
@@ -216,6 +216,7 @@
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
+    cursor: pointer;
 }
 
 .ReAnalyseButton{
@@ -227,4 +228,119 @@
     border-radius: 4.8px;
     background: #683FEA;
     box-shadow: 0px 0px 86.4px 0px rgba(153, 23, 255, 0.50);
+}
+
+
+@media(max-width:1080px){
+    .ResultSectionSpotlight{
+        padding-top: 96px;
+        padding-bottom: 64px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+    .CircleProgressBarWithButton{
+        padding: 32px;
+    }
+    .ShieldAboveText{
+        font-size: 51.2px;
+    }
+    .Shield img{
+        width: 78.4px;
+    }
+    .Shield,.UploadAndGetLinks{
+        padding: 19.2px;
+    }
+    .WhereUploadedText{
+        font-size: 25.6px;
+    }
+    .GetLinks p,.ReportButton p{
+        font-size: 14px;
+    }
+    .GetLinks img,.ReportButton img{
+        width: 17px;
+    }
+    .HeatMapText{
+        font-size: 28.8px;
+    }
+    .AnalysisText{
+        font-size: 19.2px;
+    }
+    .CircleProgressBarShieldLinks,.ResultSectionSpotlight{
+        gap: 32px;
+    }
+}
+
+@media(max-width:840px){
+    .ResultSectionSpotlight{
+        padding-bottom: 51.2px;
+        padding-left: 51.2px;
+        padding-right: 51.2px;
+    }
+    .CircleProgressBarShieldLinks{
+        flex-direction: column;
+    }
+    .ShieldAndLinks{
+        flex-direction: row;
+    }
+    .Shield,.UploadAndGetLinks{
+        flex: 1;
+    }
+    .CircleProgressBarWithButton{
+        width:auto;
+        gap: 40px;
+    }
+    .PhotosAndHeatMap{
+        flex-direction: column;
+        gap: 64px;
+    }
+    .PhotosOfUploaded{
+        justify-content: center;
+    }
+    .PhotosOfUploaded img{
+        flex: 1;
+    }
+    .ResultHeadline{
+        font-size: 44px;
+    }
+    .ResultSectionOuter{
+        gap: 38px;
+    }
+}
+
+@media(max-width:720px){
+    .ResultSectionBottomBottons{
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .ResultSectionOuter{
+        margin-top: 120px;
+    }
+}
+
+@media(max-width:560px){
+    .ResultSectionSpotlight{
+        padding-top: 76px;  
+        padding-bottom: 32px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .ShieldAndLinks{
+        flex-direction: column;
+    }
+    .DownloadText,.AnalysisText{
+        font-size: 14px;
+    }
+    .CircleProgressBarShieldLinks,.ShieldAndLinks,.ResultSectionSpotlight{
+        gap: 16px;
+    }
+    .ResultSectionBottomBottons{
+        margin-top: 32px;
+    }
+    .ResultHeadline{
+        font-size: 38px;
+    }
+    .PhotosOfUploaded img{
+        border-radius: 8px;
+    }
 }

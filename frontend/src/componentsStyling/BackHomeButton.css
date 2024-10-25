@@ -1,5 +1,35 @@
 .BackHomeButton{
+    width: 64px;
+    height: 64px; 
     padding: 8px;
-    border-radius: 50%;
+    border-radius: 100%;
     background: rgba(238, 180, 6, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.BackHomeButton img{
+    width: 64px;
+}
+
+@media(max-width:720px){
+    .BackHomeButton{
+        width: 48px;
+        height: 48px; 
+    }
+    .BackHomeButton img{
+        width: 48px;
+    }
+}
+
+@media(max-width:560px){
+    .BackHomeButton{
+        width: 40px;
+        height: 40px; 
+    }
+    .BackHomeButton img{
+        width: 440x;
+    }
 }

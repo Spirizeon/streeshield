@@ -1,11 +1,10 @@
 .RealStoryImageAndContent{
     display: flex;
-    gap: 120px;
+    gap: 80px;
 }
 
 .RealStoryImageAndContent img{
-    width: 30vw;
-    height: 42vw;
+    width: 44%;
     border-radius: 24px;
     object-fit: cover;
 }
@@ -18,7 +17,7 @@
 }
 
 .RealStoryTextContent{
-    height: 42vw;
+    height: 80vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -50,4 +49,41 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+@media(max-width:1080px){
+    .RealStoryImageAndContent{
+        gap: 64px;
+    }
+    .RealStoryImageAndContent img{
+        width: 50%;
+    }
+}
+
+@media(max-width:840px){
+    .RealStoryImageAndContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    .RealStoryImageAndContent img{
+        width: 80%;
+        border-radius: 16px;
+    }
+    .RealStoryTextContent{
+        height: 64vh;
+    }
+    .RealStoryTextContent{
+        gap: 64px;
+    }
+}
+
+
+@media(max-width:560px){
+    .RealStoryImageAndContent img{
+        width: 88%;
+        border-radius: 8px;
+    }
+    .RealStoryTextContent{
+        gap: 48px;
+    }
 }

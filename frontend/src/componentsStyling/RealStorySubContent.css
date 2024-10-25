@@ -19,3 +19,15 @@
     flex-direction: column;
     gap: 24px;
 }
+
+@media(max-width:560px){
+    .RealStorySubContent p{
+        font-size: 14.4px;
+    }
+    .RealStorySubContent h3{
+        font-size: 25.6px;
+    }
+    .RealStorySubContent{
+        gap: 16px;
+    }
+}

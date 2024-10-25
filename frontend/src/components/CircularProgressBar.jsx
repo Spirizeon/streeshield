@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CircularProgressBar = ({ size, strokeWidth, progress }) => {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
+  
+  // Define responsive font sizes
+  const [fontSizeMain, setFontSizeMain] = useState(28);
+  const [fontSizeSub, setFontSizeSub] = useState(20);
+
+  // Adjust font sizes based on screen width
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1080) {
+        setFontSizeMain(22.4);
+        setFontSizeSub(16);
+      } else {
+        setFontSizeMain(28);
+        setFontSizeSub(20);
+      }
+    };
+
+    // Initial check and event listener for window resize
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Define the gradient ID based on the progress range
   let gradientId;
@@ -16,13 +39,10 @@ const CircularProgressBar = ({ size, strokeWidth, progress }) => {
   }
 
   const transform = `rotate(-90 ${size / 2} ${size / 2})`;
-
-  // Determine the text based on the progress percentage
   const displayText = progress > 49 ? 'MORPHED' : 'UNMORPHED';
 
   return (
     <svg width={size} height={size} className="circular-progress">
-      {/* Define gradients inside <defs> */}
       <defs>
         <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="-30.18%" stopColor="#50FE00" />
@@ -38,7 +58,6 @@ const CircularProgressBar = ({ size, strokeWidth, progress }) => {
         </linearGradient>
       </defs>
 
-      {/* Background circle */}
       <circle
         stroke="#e6e6e6"
         fill="transparent"
@@ -48,10 +67,9 @@ const CircularProgressBar = ({ size, strokeWidth, progress }) => {
         cy={size / 2}
         transform={transform}
       />
-      
-      {/* Progress circle with gradient stroke */}
+
       <circle
-        stroke={`url(#${gradientId})`}  // Use the dynamic gradient here
+        stroke={`url(#${gradientId})`}
         fill="transparent"
         strokeWidth={strokeWidth}
         r={radius}
@@ -61,29 +79,28 @@ const CircularProgressBar = ({ size, strokeWidth, progress }) => {
         strokeDashoffset={offset}
         strokeLinecap="round"
         transform={transform}
-        style={{ transition: 'stroke-dashoffset 0.35s' }}  // Keep smooth progress
+        style={{ transition: 'stroke-dashoffset 0.35s' }}
       />
-      
-      {/* Percentage text in the center */}
+
       <text
         x="50%"
         y="50%"
-        dy="-0.3em" // Adjust vertical position
+        dy="-0.3em"
         textAnchor="middle"
-        fontSize="28"
-        fill="#fff"  // Text color
+        fontSize={fontSizeMain}
+        fill="#fff"
       >
         {progress}%
       </text>
-      {/* Additional text below the percentage */}
+
       <text
         x="50%"
         y="50%"
-        dy="1.2em" // Position below the percentage
+        dy="1.2em"
         textAnchor="middle"
-        fontSize="20"
+        fontSize={fontSizeSub}
         fill="#868686"
-        fontWeight="500"  // Text color
+        fontWeight="500"
       >
         {displayText}
       </text>

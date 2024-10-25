@@ -58,7 +58,7 @@ const Result = () => {
             <div className='CircleProgressBarShieldLinks'>
               <div className='CircleProgressBarWithButton'>
                 <OuterCircularProgressBar percentage={percentageMorphed}/>
-                <div className='ReportButton' onClick={handleReportClick}> {/* Add onClick handler */}
+                <div className='ReportButton' onClick={handleReportClick}>
                   <p className='ReportText'>Report</p>
                   <img src={ReportIcon} alt="Report Icon" />
                 </div>
@@ -70,7 +70,7 @@ const Result = () => {
                 </div>
                 <div className='UploadAndGetLinks'>
                   <p className='WhereUploadedText'>Where Uploaded?</p>
-                  <div className='GetLinks' onClick={handleGetLinksClick}> {/* Add onClick handler */}
+                  <div className='GetLinks' onClick={handleGetLinksClick}> 
                     <img src={GetLinksIcon} alt="Get Links Icon" />
                     <p>Get Links</p>
                   </div>

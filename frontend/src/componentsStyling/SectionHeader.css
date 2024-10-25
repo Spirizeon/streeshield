@@ -12,3 +12,12 @@
     font-weight: 500;
     line-height: normal;
 }
+
+@media(max-width:1080px){
+    .section-title{
+        font-size: 44.8px;
+    }
+    .section-subtitle{
+        font-size: 19.2px;
+    }
+}
