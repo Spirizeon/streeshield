@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .ProgressBarHeader{
@@ -22,7 +23,7 @@
 }
 
 .AnalysingSectionOuter{
-    margin-top: 60px;
+    margin-top: 160px;
     margin-bottom: 120px;
     display: flex;
     flex-direction: column;
@@ -46,3 +47,51 @@
     display: flex;
 }
 
+.ViewResultButton{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ProgressBarFooter{
+    position: relative;
+}
+.TextBelowInSemiCircle{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    position: relative;
+    bottom: 120px;
+}
+
+.ViewResultButton,.DisViewResultButton{
+    position: absolute;
+    bottom: 0px;
+}
+@media(max-width:840px){
+    .AnalysingSectionHeader{
+        font-size: 44px;
+    }
+}
+@media(max-width:720px){
+    .AnalysingSectionOuter{
+        margin-top: 120px;
+    }
+    .TextBelowInSemiCircle{
+        font-size: 14px;
+        bottom: 104px;
+    }
+}
+
+@media(max-width:560px){
+    .AnalysingSectionHeader{
+        font-size: 38px;
+    }
+    .ProgressBarHeader{
+        font-size: 22px;
+    }
+    .TextBelowInSemiCircle{
+        font-size: 12px;
+        bottom: 92px;
+    }
+}

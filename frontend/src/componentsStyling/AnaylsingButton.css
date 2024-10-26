@@ -12,3 +12,15 @@
     font-weight: 500;
     line-height: normal;
 }
+
+@media(max-width:720px){
+    .AnalysingButton{
+        padding: 9.6px  19.2px;
+    }
+    .ViewResultText{
+        font-size: 19.2px;
+    }
+    .AnalysingButton img{
+        width: 20px;
+    }
+}
