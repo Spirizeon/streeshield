@@ -39,3 +39,18 @@
     bottom: 0px;
     right: 0px;
 }
+
+@media(max-width:1240px){
+    .DragDropText{
+        font-size: 76px;
+    }
+    .DropVectorBottomLeft,.DropVectorBottomRight,.DropVectorTopLeft,.DropVectorTopRight{
+        width: 136px;
+    }
+}
+
+@media(max-width:1080px){
+    .DragDropText{
+        font-size: 60px
+    }
+}

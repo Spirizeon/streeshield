@@ -11,63 +11,64 @@ const Upload = () => {
     const [uploadStatus, setUploadStatus] = useState('idle');
     const [errorMessage, setErrorMessage] = useState('');
     const [uploadPercentage, setUploadPercentage] = useState(0);
-    const [uploadedFile, setUploadedFile] = useState(null); // Store the actual file
-    const [fileUrl, setFileUrl] = useState(null); // Store file URL for display
-
-    // State variables to store percentage_morphed and search_result
+    const [uploadedFile, setUploadedFile] = useState(null);
+    const [fileUrl, setFileUrl] = useState(null);
     const [percentageMorphed, setPercentageMorphed] = useState(0);
     const [searchResult, setSearchResult] = useState([]);
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 840); // Track screen size
 
-    // Upload file to FastAPI backend and show progress
+    // Check screen size and update isSmallScreen state
+    const handleResize = () => {
+        setIsSmallScreen(window.innerWidth < 840);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const simulateUpload = (file) => {
         setUploadStatus('uploading');
         setUploadPercentage(0);
-        setUploadedFile(file); // Ensure file is set before starting upload
+        setUploadedFile(file);
 
         console.log('Uploading file:', file.name);
 
-        // Prepare the form data
         const formData = new FormData();
         formData.append('file', file);
 
-        // Use fetch API to send the file to FastAPI
         fetch('http://localhost:8000/upload', {
             method: 'POST',
             body: formData,
         })
-            .then((response) => response.json()) // Parse JSON response
+            .then((response) => response.json())
             .then((data) => {
                 console.log('Response from FastAPI:', data);
                 setUploadStatus('uploaded');
                 setUploadPercentage(100);
-
-                // Store percentage_morphed and search_result in state
                 setPercentageMorphed(data.percentage_morphed);
                 setSearchResult(data.search_result);
             })
             .catch((error) => {
-                console.error('Upload failed:', error); // Log the error
-                setUploadStatus('failed'); // Set status to failed
-                setUploadedFile(null); // Clear file if upload fails
+                console.error('Upload failed:', error);
+                setUploadStatus('failed');
+                setUploadedFile(null);
             });
 
-        // Simulate progress
         const interval = setInterval(() => {
             setUploadPercentage((prev) => {
                 if (prev >= 100) {
-                    clearInterval(interval); // Stop interval when progress is 100%
+                    clearInterval(interval);
                 }
-                return Math.min(prev + 10, 100); // Increment by 10% each time
+                return Math.min(prev + 10, 100);
             });
         }, 200);
     };
 
-
-    // Function that triggers on file drop
     const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
         setErrorMessage('');
-        setUploadedFile(null); // Reset the uploaded file initially
-        setFileUrl(null); // Clear the previous file URL
+        setUploadedFile(null);
+        setFileUrl(null);
 
         console.log('Accepted files:', acceptedFiles);
         console.log('Rejected files:', rejectedFiles);
@@ -79,29 +80,23 @@ const Upload = () => {
 
         if (acceptedFiles.length === 1) {
             const file = acceptedFiles[0];
-            simulateUpload(file); // Start simulated upload
+            simulateUpload(file);
         } else {
             setErrorMessage('Please upload only one image or video file.');
         }
     }, []);
 
-    // Create object URL for the uploaded file and clean it up after unmount
     useEffect(() => {
         if (uploadedFile) {
             const url = URL.createObjectURL(uploadedFile);
             setFileUrl(url);
-
-            console.log('File URL created:', url);
-
             return () => {
-                console.log('Cleaning up file URL:', url);
-                URL.revokeObjectURL(url); // Clean up old URL if present
-                setFileUrl(null); // Ensure the URL is reset properly
+                URL.revokeObjectURL(url);
+                setFileUrl(null);
             };
         }
     }, [uploadedFile]);
 
-    // Initialize react-dropzone hook
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         maxFiles: 1,
@@ -111,7 +106,6 @@ const Upload = () => {
         },
     });
 
-    // Ensure to return proper UI based on state
     return (
         <div className='UploadSectionMainOuter'>
             <div className='UploadSectionOuter'>
@@ -125,40 +119,36 @@ const Upload = () => {
                         <input {...getInputProps()} />
                         {
                             isDragActive ? (
-                                <DragAndDrop />
+                                isSmallScreen ? (
+                                    <BeforeUploadSection /> // Display BeforeUploadSection if small screen
+                                ) : (
+                                    <DragAndDrop /> // Display DragAndDrop if large screen
+                                )
                             ) : uploadStatus === 'idle' ? (
                                 <BeforeUploadSection />
                             ) : null
                         }
                     </div>
 
-                    {/* Display validation error message */}
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-                    {/* Display upload status and progress */}
-                    {
-                        uploadStatus === 'uploading' && uploadedFile ? (
-                            <div>
-                                <WhileUploading
-                                    progress={uploadPercentage}
-                                    fileName={uploadedFile?.name}
-                                    fileSize={(uploadedFile?.size / 1024 / 1024).toFixed(2)}
-                                />
-                            </div>
-                        ) : uploadStatus === 'uploaded' && uploadedFile ? (
-                            <div>
-                                <UploadingProgress
-                                    fileName={uploadedFile?.name}
-                                    fileSize={(uploadedFile?.size / 1024 / 1024).toFixed(2)}
-                                    fileUrl={fileUrl}
-                                    percentageMorphed={percentageMorphed}
-                                    searchResult={searchResult}
-                                />
-                            </div>
-                        ) : uploadStatus === 'failed' ? (
-                            <p>Upload Failed. Please try again.</p>
-                        ) : null
-                    }
+                    {uploadStatus === 'uploading' && uploadedFile ? (
+                        <WhileUploading
+                            progress={uploadPercentage}
+                            fileName={uploadedFile?.name}
+                            fileSize={(uploadedFile?.size / 1024 / 1024).toFixed(2)}
+                        />
+                    ) : uploadStatus === 'uploaded' && uploadedFile ? (
+                        <UploadingProgress
+                            fileName={uploadedFile?.name}
+                            fileSize={(uploadedFile?.size / 1024 / 1024).toFixed(2)}
+                            fileUrl={fileUrl}
+                            percentageMorphed={percentageMorphed}
+                            searchResult={searchResult}
+                        />
+                    ) : uploadStatus === 'failed' ? (
+                        <p>Upload Failed. Please try again.</p>
+                    ) : null}
                 </div>
                 <div className='BorderBottomForSection'></div>
             </div>
