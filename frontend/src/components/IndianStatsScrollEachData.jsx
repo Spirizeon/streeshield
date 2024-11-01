@@ -1,9 +1,9 @@
 import React from 'react'
 import "../componentsStyling/IndianStatsScrollEachData.css"
 
-const IndianStatsScrollEachData = ({message,messagePerson,TVChannelImage}) => {
+const IndianStatsScrollEachData = ({message,messagePerson,TVChannelImage,className}) => {
   return (
-    <div className='IndianStatsScrollEachData'>
+    <div className={`IndianStatsScrollEachData ${className}`}>
       <div className='IndianStatsEachDataTop'>
         <p className='IndianStatsMessage'>{message}</p>
         <p className='IndianStatsMessagePerson'>{messagePerson}</p>
