@@ -152,4 +152,22 @@
     .IndianStatsScrollAllData{
         padding: 16px;
     }
+    .IndianStats{
+        margin-bottom: 120px;
+    }
+}
+
+@media(max-width:480px){
+    .CountValue{
+        font-size:44px;
+    }
+    .BelowCountText{
+        font-size: 16px;
+    }
+    .FIRText{
+        font-size: 20px;
+    }
+    .CasesCountOuter{
+        gap: 19.2px;
+    }
 }

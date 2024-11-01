@@ -140,3 +140,13 @@
         margin-top: 76px;
     }
 }
+
+@media(max-width:480px){
+    .CardNumber{
+        font-size: 120px;
+        top: -60px;
+    }
+    .HowItsWoksEachCardOuter{
+        margin-top: 60px;
+    }
+}

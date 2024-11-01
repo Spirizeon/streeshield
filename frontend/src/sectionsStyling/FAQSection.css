@@ -10,3 +10,9 @@
     flex-direction: column;
     gap: 16px;
 }
+
+@media(max-width:560px){
+    .FAQSection{
+        margin-bottom: 120px;
+    }
+}

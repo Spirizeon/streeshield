@@ -24,10 +24,11 @@
 
 .AnalysingSectionOuter{
     margin-top: 160px;
-    margin-bottom: 120px;
+    margin-bottom: 160px;
     display: flex;
     flex-direction: column;
     gap: 48px;
+    position: relative;
 }
 
 .AnalysingSectionHeader{
@@ -74,9 +75,6 @@
     }
 }
 @media(max-width:720px){
-    .AnalysingSectionOuter{
-        margin-top: 120px;
-    }
     .TextBelowInSemiCircle{
         font-size: 14px;
         bottom: 104px;
@@ -93,5 +91,18 @@
     .TextBelowInSemiCircle{
         font-size: 12px;
         bottom: 92px;
+    }
+    .AnalysingSectionOuter{
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+}
+
+@media(max-width:480px){
+    .AnalysingSectionHeader{
+        font-size: 32px;
+    }
+    .ProgressBarHeader{
+        font-size: 20px;
     }
 }

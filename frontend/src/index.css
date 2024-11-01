@@ -7,37 +7,63 @@
 
 body{
     background: var(--Background, #0B0B0F);
-    padding: 32px 160px;
-    padding-top: 0px;
     overflow-x: clip;
     box-sizing: border-box;
 }
+.HomeOuter,.UploadSectionMainOuter,.AnalysingSectionMainOuter,.ResultSectionMainOuter,.Footer{
+    padding: 32px 160px;
+    padding-top: 0px;
+}
+
+.VeticalLineLeft{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 120px;
+}
+.VeticalLineRight{
+    position: fixed;
+    right: 120px;
+    top: 0px;
+    bottom: 0px;
+}
 
 @media(max-width:1080px){
-    body{
+    .HomeOuter,.UploadSectionMainOuter,.AnalysingSectionMainOuter,.ResultSectionMainOuter,.Footer{
         padding-left: 120px;
         padding-right: 120px;
+    }
+    .VeticalLineLeft{
+        left: 80px;
+    }
+    .VeticalLineRight{
+        right: 80px;
     }
 }
 
 @media(max-width:840px){
-    body{
+    .HomeOuter,.UploadSectionMainOuter,.AnalysingSectionMainOuter,.ResultSectionMainOuter,.Footer{
         padding-left: 64px;
         padding-right: 64px;
+    }
+    .VeticalLineLeft{
+        left: 40px;
+    }
+    .VeticalLineRight{
+        right: 40px;
     }
 }
 
 @media(max-width:720px){
-    body{
-        padding-left: 32px;
-        padding-right: 32px;
+    .HomeOuter,.UploadSectionMainOuter,.AnalysingSectionMainOuter,.ResultSectionMainOuter,.Footer{
+        padding-left: 40px;
+        padding-right: 40px;
     }
-}
-
-@media(max-width:560px){
-    body{
-        padding-left: 16px;
-        padding-right: 16px;
+    .VeticalLineLeft{
+        left: 16px;
+    }
+    .VeticalLineRight{
+        right: 16px;
     }
 }
 /*

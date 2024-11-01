@@ -86,4 +86,19 @@
     .RealStoryTextContent{
         gap: 48px;
     }
+    .RealStroiesAndImpact{
+        margin-bottom: 120px;
+    }
+    .GirlWords{
+        font-size: 14.4px;
+    }
+    .GirlName li{
+        font-size: 14.4px;
+    }
+}
+
+@media(max-width:480px){
+    .RealStoryTextContent{
+        gap: 40px;
+    }
 }

@@ -96,3 +96,21 @@
         flex: 0 0 88%;
     }
 }
+
+@media(max-width:480px){
+    .IndianStatsScrollEachData{
+        flex: 0 0 94%;
+    }
+    .IndianStatsMessage{
+        font-size: 16px;
+    }
+    .IndianStatsMessagePerson{
+        font-size: 12px;
+    }
+    .TVChannelImgage{
+        width: 36px;
+    }
+    .ReadArticleButton{
+        padding: 8px 16px;
+    }
+}

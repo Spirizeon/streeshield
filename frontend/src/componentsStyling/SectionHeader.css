@@ -21,3 +21,12 @@
         font-size: 19.2px;
     }
 }
+
+@media(max-width:480px){
+    .section-title{
+        font-size: 35.2px;
+    }
+    .section-subtitle{
+        font-size: 16px;
+    }
+}

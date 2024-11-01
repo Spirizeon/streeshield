@@ -4,17 +4,19 @@ import CheckYourMediaButton from '../components/CheckYourMediaButton';
 import GirlImageOneHeroPage from "../assets/GirlImageOneHeroPage.webp";
 import GirlImageTwoHeroPage from "../assets/GirlImageTwoHeroPage.webp";
 import "../sectionsStyling/HeroSection.css";
-
+import LinesHeroSection from "../assets/LinesHeroSection.svg"
+import TextEncrypted from '../components/TextEncrypted';
 const HeroSection = () => {
   return (
     <div className='HeroSection'>
+      {/* <img src={LinesHeroSection} alt="" className='LineHeroSectionLeft'/> */}
       <div className='HeroTextAndCheckMediaButton'>
         <div className='ButtonTitleGroupAndSubtitle'>
           <div className='HeroPageButtonTopAndTitle'>
             <div className='HeroPageButtonTop'>
               <img src={HeroPageButtonTop} alt="" />
             </div>
-            <h1 className='StreeAndShieldText'><span className='StreeText'>स्त्री</span> <span className='ShieldText'>Shield</span></h1>
+            <h1 className='StreeAndShieldText'><span className='StreeText'>स्त्री</span> <span className='ShieldText'><TextEncrypted/></span></h1>
           </div>
           <p className='HeroSectionSubText'>Protecting Women's Identities in the Digital World.</p>
         </div>

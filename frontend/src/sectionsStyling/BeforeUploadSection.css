@@ -47,6 +47,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: center;
 }
 
 .draganddroptext p{
@@ -72,6 +73,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: center;
 }
 
 .filesizeformat{
@@ -101,13 +103,7 @@
 }
 
 
-.UploadSectionOuter{
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    margin-bottom: 120px;
-    margin-top: 64px;
-}
+
 
 .UploadSectionBackButton{
     display: flex;
@@ -151,3 +147,4 @@
         font-size: 14px;
     }
 }
+

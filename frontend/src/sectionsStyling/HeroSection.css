@@ -21,6 +21,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: center;
 }
 
 .HeroPageButtonTopAndTitle{
@@ -71,6 +72,7 @@
     gap: 80px;
     margin-bottom: 160px;
     margin-top: 160px;
+    position: relative;
 }
 
 
@@ -135,8 +137,35 @@
     }
     .HeroSection{
         gap: 51.2px;
+        margin-bottom: 120px;
+        margin-top: 120px;
     }
     .HeroTextAndCheckMediaButton{
         gap: 25.6px;
+    }
+    .StreeAndShieldText{
+        gap: 24px;
+    }
+}
+
+@media(max-width:480px){
+    .StreeText{
+        font-size: 64px;
+    }
+    .ShieldText{
+        font-size: 56px;
+    }
+    .HeroPageButtonTop img{
+        width: 196px;
+    }
+    .StreeAndShieldText{
+        gap: 20px;
+    }
+}
+
+@media(max-width:390px){
+    .StreeAndShieldText{
+        flex-direction: column;
+        gap: 0px;
     }
 }

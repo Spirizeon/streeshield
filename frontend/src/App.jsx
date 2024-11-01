@@ -6,12 +6,17 @@ import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Analysing from './sections/Analysing';
 import Result from './sections/Result';
+import MainVerticalLine from "./assets/MainVerticalLine.svg"
 function App() {
 
   return (
     <>
     <BrowserRouter>
     <NavBar/>
+    <div className='MainVeticalLineOuter'>
+      <img src={MainVerticalLine} alt="" className='VeticalLineLeft'/>
+      <img src={MainVerticalLine} alt="" className='VeticalLineRight'/>
+    </div>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/upload' element={<Upload/>}/>

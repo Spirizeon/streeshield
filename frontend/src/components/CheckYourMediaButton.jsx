@@ -7,7 +7,7 @@ const CheckYourMediaButton = () => {
   return (
     <NavLink to="/upload" className='CheckYourMediaButton'>
         <img src={SmallUploadButton} alt="" />
-        <div><ShinyText text="Check Your Media" disabled={false} speed={3} className='custom-class' /></div>
+        <div><ShinyText text="Check Your Media" disabled={false} speed={3} className='TextInShinyButton' /></div>
     </NavLink>
   )
 }

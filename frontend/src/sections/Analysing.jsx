@@ -52,49 +52,52 @@ const Analysing = () => {
   }, []);
 
   return (
-    <div className='AnalysingSectionOuter'>
-      <div className='BackHomeButtonINAnalyse'>
-        <BackHomeButton />
-      </div>
-      <div className='AnalysingSection'>
-        <h2 className='AnalysingSectionHeader'>ANALYSING</h2>
-        <div className='AnalysingSectionSpotlightOuterBox'>
-          <div className='border-gradient-color'></div>
-          <p className='CardNumber'>2</p>
-          <SpotlightCard className="custom-spotlight-card AnalysingSectionSpotlight" spotlightColor="rgba(0, 229, 255, 0)">
-            <div className='ProgressBarHeader'>
-              {progress === 100 ? 'Result Ready' : 'Extracting'}
-            </div>
-            <div className='ProgressBarAndButton'>
-              <div className='ProgressBarFooter'>
-                <div className='SemiCirlceProgressBar'>
-                  <SemiCircleProgress
-                    percentage={progress}
-                    size={progressSize}
-                    strokeWidth={6}
-                    strokeColor="#683FEA"
-                    fontStyle={{ fill: '#fff', fontSize: `${fontSize}px`, transform: 'translate(-2%,-12%)', textAnchor: 'middle' }}
-                  />
-                </div>
-                <p 
-                  className='TextBelowInSemiCircle' 
-                  style={{ color: progress === 100 ? '#00D17A' : '#5B5B5B' }}
-                >
-                  {progress === 100 ? 'File Analyzed Successfully' : 'Your File is being processed'}
-                </p>
-              </div>
-              {progress === 100 ? (
-                <NavLink to="/result" state={{ percentageMorphed, searchResult }} className={'ViewResultButton'}>
-                  <AnalysingButton textColor="#FFF" backgroundColor="#00D17A" Icon={ActiveSheild} />
-                </NavLink>
-              ) : (
-                <div className="DisViewResultButton" >
-                  <AnalysingButton textColor="#979797" backgroundColor="#6F6F6F" Icon={DisabledSheild} />
-                </div>
-              )}
-            </div>
-          </SpotlightCard>
+    <div  className='AnalysingSectionMainOuter'>
+      <div className='AnalysingSectionOuter'>
+        <div className='BackHomeButtonINAnalyse'>
+          <BackHomeButton />
         </div>
+        <div className='AnalysingSection'>
+          <h2 className='AnalysingSectionHeader'>ANALYSING</h2>
+          <div className='AnalysingSectionSpotlightOuterBox'>
+            <div className='border-gradient-color'></div>
+            <p className='CardNumber'>2</p>
+            <SpotlightCard className="custom-spotlight-card AnalysingSectionSpotlight" spotlightColor="rgba(0, 229, 255, 0)">
+              <div className='ProgressBarHeader'>
+                {progress === 100 ? 'Result Ready' : 'Extracting'}
+              </div>
+              <div className='ProgressBarAndButton'>
+                <div className='ProgressBarFooter'>
+                  <div className='SemiCirlceProgressBar'>
+                    <SemiCircleProgress
+                      percentage={progress}
+                      size={progressSize}
+                      strokeWidth={6}
+                      strokeColor="#683FEA"
+                      fontStyle={{ fill: '#fff', fontSize: `${fontSize}px`, transform: 'translate(-2%,-12%)', textAnchor: 'middle' }}
+                    />
+                  </div>
+                  <p
+                    className='TextBelowInSemiCircle'
+                    style={{ color: progress === 100 ? '#00D17A' : '#5B5B5B' }}
+                  >
+                    {progress === 100 ? 'File Analyzed Successfully' : 'Your File is being processed'}
+                  </p>
+                </div>
+                {progress === 100 ? (
+                  <NavLink to="/result" state={{ percentageMorphed, searchResult }} className={'ViewResultButton'}>
+                    <AnalysingButton textColor="#FFF" backgroundColor="#00D17A" Icon={ActiveSheild} />
+                  </NavLink>
+                ) : (
+                  <div className="DisViewResultButton" >
+                    <AnalysingButton textColor="#979797" backgroundColor="#6F6F6F" Icon={DisabledSheild} />
+                  </div>
+                )}
+              </div>
+            </SpotlightCard>
+          </div>
+        </div>
+        <div className='BorderBottomForSection'></div>
       </div>
     </div>
   );

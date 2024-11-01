@@ -7,7 +7,8 @@ import Hambargar from "../assets/Hambargar.svg"
 
 const NavBar = () => {
   return (
-    <nav className='NavBar'>
+    <div className='NavBarOuter'>
+        <nav className='NavBar'>
         <div className='LogoOuter'>
             <img src={MainLogo} alt="" />
         </div>
@@ -26,6 +27,7 @@ const NavBar = () => {
             <img src={Hambargar} alt="" className='Hambargar' />
         </div>
     </nav>
+    </div>
   )
 }
 

@@ -1,0 +1,78 @@
+.SectionOuterForBorder{
+    position: relative;
+}
+.HomeOuter{
+    position: relative;
+}
+.HalfShieldLeft{
+    position: absolute;
+    left: 0px;
+    width: 22vw;
+}
+
+.HalfShieldRight{
+    position: absolute;
+    transform: scaleX(-1);
+    right: 0px;
+    width: 22vw;
+}
+
+
+.BorderBottomForSection{
+    position: absolute;
+    height: 2px;
+    bottom: -80px;
+    left: -160px;
+    right: -160px;
+    background-color: #1F1F1F;
+}
+
+@media(max-width:1240px){
+    .HalfShieldLeft,.HalfShieldRight{
+        top: 280px;
+    }
+}
+
+@media(max-width:1080px){
+    .BorderBottomForSection{
+        left: -120px;
+        right: -120px;
+    }
+}
+
+@media(max-width:840px){
+    .BorderBottomForSection{
+        left: -64px;
+        right: -64px;
+    }
+    .HalfShieldLeft,.HalfShieldRight{
+        width: 26vw;
+    }
+}
+
+@media(max-width:720px){
+    .BorderBottomForSection{
+        left: -40px;
+        right: -40px;
+    }
+    .HalfShieldLeft,.HalfShieldRight{
+        top: 220px;
+        width: 32vw;
+    }
+}
+
+@media(max-width:560px){
+    .BorderBottomForSection{
+        bottom: -60px;
+    }
+    .HalfShieldLeft,.HalfShieldRight{
+        top: 200px;
+    }
+}
+
+@media(max-width:390px){
+    .HalfShieldLeft,.HalfShieldRight{
+        top: 270px;
+        width: 32vw;
+    }
+}
