@@ -39,7 +39,6 @@ const CircularProgressBar = ({ size, strokeWidth, progress }) => {
   }
 
   const transform = `rotate(-90 ${size / 2} ${size / 2})`;
-  const displayText = progress > 49 ? 'MORPHED' : 'UNMORPHED';
 
   return (
     <svg width={size} height={size} className="circular-progress">
@@ -102,7 +101,7 @@ const CircularProgressBar = ({ size, strokeWidth, progress }) => {
         fill="#868686"
         fontWeight="500"
       >
-        {displayText}
+        MORPHED
       </text>
     </svg>
   );

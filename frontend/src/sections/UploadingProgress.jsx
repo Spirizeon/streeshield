@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SpotlightCard from '../components/SpotlightCard';
 import DustbinIcon from "../assets/DustbinIcon.svg";
 import GreenTickIcon from "../assets/GreenTickIcon.svg";
@@ -10,18 +10,29 @@ import { useNavigate } from 'react-router-dom';
 import CrossIcon from "../assets/CrossIcon.svg";
 
 const UploadingProgress = ({ fileName, fileSize, fileUrl, percentageMorphed, searchResult }) => {
-  const [showPreview, setShowPreview] = useState(false); // State to control the preview modal
-  const navigate = useNavigate(); // Use useNavigate hook to programmatically navigate
+  const [showPreview, setShowPreview] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth); // State to track screen width
+  const navigate = useNavigate();
 
-  // Function to toggle the preview modal
+  useEffect(() => {
+    // Event listener to update screen width on resize
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const togglePreview = () => {
     setShowPreview(!showPreview);
   };
 
-  // Function to handle navigation to /analyse and pass the data
   const handleAnalyseClick = () => {
     navigate('/analyse', { state: { percentageMorphed, searchResult } });
   };
+
+  // Determine the length of the fileName to display based on screen size
+  const truncatedFileName = screenWidth < 560 
+    ? (fileName.length > 5 ? `${fileName.slice(0, 5)}...` : fileName)
+    : (fileName.length > 15 ? `${fileName.slice(0, 15)}...` : fileName);
 
   return (
     <div>
@@ -35,14 +46,13 @@ const UploadingProgress = ({ fileName, fileSize, fileUrl, percentageMorphed, sea
                 <div className='MediaAndType'>
                   <img src={MediaIcon} alt="" />
                   <div className='MediaName'>
-                    <span className='MediaInsideName'>{fileName}</span>
-                    {/* When "Preview" is clicked, toggle the preview modal */}
+                    <p className='FileName'>{truncatedFileName}&nbsp; &nbsp;</p>
                     <span className='PreviewText' onClick={togglePreview}>Preview</span>
                   </div>
                 </div>
                 <div className='DataSizeAndIcon'>
-                  <p className='DataSize'>{fileSize} MB</p>
-                  <div></div>
+                  <p className='DataSize'>{fileSize}MB</p>
+                  <div className='DataSizeAndIconLine'></div>
                   <img src={DustbinIcon} alt="" />
                 </div>
               </div>
@@ -51,7 +61,6 @@ const UploadingProgress = ({ fileName, fileSize, fileUrl, percentageMorphed, sea
                 <p className='GreenBottomText'>Successfully Uploaded</p>
               </div>
             </div>
-            {/* Replacing NavLink with a button that triggers the navigation */}
             <div className="AnalyseButtonOuter" onClick={handleAnalyseClick}>
               <div className='AnalyseButton'>
                 <img src={AnalyseIcon} alt="" />
@@ -62,7 +71,6 @@ const UploadingProgress = ({ fileName, fileSize, fileUrl, percentageMorphed, sea
         </SpotlightCard>
       </div>
 
-      {/* Conditionally render the MediaPreview component as a modal */}
       {showPreview && (
         <div className="media-preview-modal">
           <div className="media-preview-content">

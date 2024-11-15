@@ -27,7 +27,15 @@
 .MediaName{
     display: flex;
     gap: 2px;
+    align-items: flex-end;
 }
+
+.DataSizeAndIconLine{
+    background-color: #E4E4E4;
+    width: 1px;
+    height: 100%;
+}
+
 .MediaInsideName{
     color: rgba(0, 0, 0, 0.70);
     font-size: 16px;
@@ -108,3 +116,65 @@
     position: relative;
 }
 
+.PopUpBackgroundBlur{
+    z-index: 4 !important;
+}
+@media(max-width:720px){
+    .AnalyseText{
+        font-size: 22.4px;
+    }
+    .AnalyseButton img{
+        width: 26px;
+    }
+    .MediaAndType img{
+        width: 38px;
+    }
+    .MediaName .FileName{
+        font-size: 14px;
+    }
+    .MediaWhiteCard{
+        gap: 40px;
+    }
+}
+
+@media(max-width:560px){
+    .MediaWhiteCard{
+        padding-right: 20px;
+        padding-left: 12px;
+    }
+    .DataSizeAndIcon{
+        gap: 8px;
+    }
+    .UploadingProgressSpotlightCard{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media(max-width:480px){
+    .DataSize,.DataSizeAndIconLine{
+        display: none;
+    }
+    .MediaWhiteCard{
+        padding-right: 16px;
+        padding-left: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .UploadingProgressSpotlightCard{
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    .GreenBottomText{
+        font-size: 10px;
+    }
+    .GreenBottomTextAndIcon img{
+        width: 12px;
+    }
+    .card-spotlight{
+        border-radius: 12px;
+    }
+    .border-gradient-color{
+        border-radius: 12px;
+    }
+}

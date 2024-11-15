@@ -92,3 +92,55 @@
 .MediaIconInWhileUploading{
     opacity: 0.64;
 }
+
+@media(max-width:720px){
+    .AnalyzeTextInWhileUploading{
+        font-size: 22.4px;
+    }
+    .AnalyzeButtonInWhileUploading img{
+        width: 26px;
+    }
+    .MediaIconInWhileUploading{
+        width: 38px;
+    }
+    .FileName{
+        font-size: 14px;
+    }
+}
+
+@media(max-width:560px){
+    .WhiteCardInWhileUploading{
+        padding-right: 20px;
+        padding-left: 12px;
+    }
+    .WhileUploadingProgressSpotlightCard{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media(max-width:480px){
+    .WhiteCardInWhileUploading{
+        padding-right: 16px;
+        padding-left: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .WhileUploadingProgressSpotlightCard{
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    .SubTextInWhileUploading{
+        font-size: 10px;
+    }
+    .HorizontalProgressBarInUploading{
+        min-width: 160px;
+    }
+}
+
+
+@media(max-width:390px){
+    .HorizontalProgressBarInUploading{
+        min-width: 120px;
+    }
+}

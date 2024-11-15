@@ -50,6 +50,7 @@
     }
     .LinksNotFoundPopUpBox{
         padding: 24px;
+        border-radius: 8px;
     }
     .NoLinksFoundCrossIconOuter img{
         width: 16px;

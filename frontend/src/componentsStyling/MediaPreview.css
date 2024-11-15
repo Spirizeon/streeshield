@@ -18,17 +18,16 @@
     position: fixed;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 8px;
     z-index: 4;
     left: 16vw;
     right: 16vw;
-    top: 10vh;
+    top: 16vh;
     border-radius: 15.75px;
     border: 1.575px solid var(--Stroke, #2B2B2B);
     background: linear-gradient(122deg, #0E0E0E 0%, #050505 96.81%);
     padding-top: 80px;
-    padding-left: 160px;
-    padding-right: 160px;
     padding-bottom: 24px;
 }
 
@@ -36,12 +35,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 46vw;
+    min-width: 320px;
 }
 
 .ImageInMediaPreview{
     object-fit:contain;
-    max-height: 60vh;
     width: 46vw;
+    min-width: 320px;
+    max-height: 60vh;
 }
 
 .media-content{
@@ -56,6 +58,44 @@
     right: 32px;
 }
 
-.VideoInMediaPreview{
-    height: 60vh;
+@media(max-width:720px){
+    .PreviewTextInMediaPreview{
+        font-size: 20px;
+    }
+    .FileNameInMediaPreview{
+        font-size: 12px;
+    }
+    .media-preview-box{
+        border-radius: 12px;
+    }
+    .CrossIconInMediaPreview{
+        width: 16px;
+    }
+    .media-preview-box{
+        left: 80px;
+        right: 80px;
+    }
+}
+
+@media(max-width:560px){
+    .media-preview-box{
+        left: 40px;
+        right: 40px;
+    }
+}
+
+@media(max-width:480px){
+    .media-preview-box{
+        left: 16px;
+        right: 16px;
+    }
+}
+
+@media(max-width:390px){
+    .ImageInMediaPreview{
+        min-width: 280px;
+    }  
+    .PreviewTextAndFileNameInMediaPreview{
+        min-width: 280px;
+    } 
 }

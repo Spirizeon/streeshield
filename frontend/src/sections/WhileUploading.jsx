@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import SpotlightCard from '../components/SpotlightCard';
 import CrossIconInUploading from "../assets/CrossIconInUploading.svg";
 import MediaIcon from "../assets/MediaIcon.svg";
-import AnalyzeIconInWhileUploading from "../assets/AnalyzeIconInWhileUploading.svg"
+import AnalyzeIconInWhileUploading from "../assets/AnalyzeIconInWhileUploading.svg";
 import HorizontalProgressBar from '../components/HorizontalProgressBar';
-
 import "../sectionsStyling/WhileUploading.css";
 
-const WhileUploading = ({progress,fileName,fileSize}) => {
+const WhileUploading = ({ progress, fileName, fileSize }) => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth); // State to track screen width
+
+  useEffect(() => {
+    // Event listener to update screen width on resize
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Determine the length of the fileName to display based on screen size
+  const truncatedFileName = screenWidth < 560 
+    ? (fileName.length > 5 ? `${fileName.slice(0, 5)}...` : fileName)
+    : (fileName.length > 15 ? `${fileName.slice(0, 15)}...` : fileName);
+
   return (
     <div>
       <div className='WhileUploadingProgressSpotlightOuterBox'>
@@ -18,11 +31,12 @@ const WhileUploading = ({progress,fileName,fileSize}) => {
             <div className='WhiteCardInWhileUploadingAndSubText'>
               <div className='WhiteCardInWhileUploading'>
                 <div>
-                  <img src={MediaIcon} alt="" className='MediaIconInWhileUploading'/>
+                  <img src={MediaIcon} alt="" className='MediaIconInWhileUploading' />
                 </div>
                 <div className='FileNameSizeAndHorizontalProgressBar'>
                   <div className='FileNameAndSize'>
-                    <p className='FileName'>{fileName}</p>
+                    {/* Display the truncated file name */}
+                    <p className='FileName'>{truncatedFileName}</p>
                     <p className='Size'>{fileSize} MB</p>
                   </div>
                   <div className='HorizontalProgressBarInUploading'>
@@ -44,7 +58,7 @@ const WhileUploading = ({progress,fileName,fileSize}) => {
         </SpotlightCard>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhileUploading
+export default WhileUploading;
