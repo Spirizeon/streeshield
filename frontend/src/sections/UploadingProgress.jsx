@@ -30,7 +30,7 @@ const UploadingProgress = ({ fileName, fileSize, fileUrl, percentageMorphed, sea
   };
 
   // Determine the length of the fileName to display based on screen size
-  const truncatedFileName = screenWidth < 560 
+  const truncatedFileName = screenWidth < 560
     ? (fileName.length > 5 ? `${fileName.slice(0, 5)}...` : fileName)
     : (fileName.length > 15 ? `${fileName.slice(0, 15)}...` : fileName);
 
@@ -53,7 +53,12 @@ const UploadingProgress = ({ fileName, fileSize, fileUrl, percentageMorphed, sea
                 <div className='DataSizeAndIcon'>
                   <p className='DataSize'>{fileSize}MB</p>
                   <div className='DataSizeAndIconLine'></div>
-                  <img src={DustbinIcon} alt="" />
+                  <img
+                    src={DustbinIcon}
+                    alt=""
+                    onClick={() => window.location.reload()}
+                  />
+
                 </div>
               </div>
               <div className='GreenBottomTextAndIcon'>

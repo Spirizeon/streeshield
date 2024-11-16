@@ -9,8 +9,8 @@ import TextEncrypted from '../components/TextEncrypted';
 const HeroSection = () => {
   return (
     <div className='HeroSection'>
-      {/* <img src={LinesHeroSection} alt="" className='LineHeroSectionLeft'/> */}
       <div className='HeroTextAndCheckMediaButton'>
+        
         <div className='ButtonTitleGroupAndSubtitle'>
           <div className='HeroPageButtonTopAndTitle'>
             <div className='HeroPageButtonTop'>

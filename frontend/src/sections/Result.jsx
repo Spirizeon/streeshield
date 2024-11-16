@@ -114,7 +114,7 @@ const Result = () => {
         {isLinkPopUpVisible && (
           <div onClick={e => e.stopPropagation()}>
             <div className='PopUpBackgroundBlur' onClick={closeLinksPopUp}></div>
-            {percentageMorphed > 49 ?
+            {percentageMorphed > 49 && searchResult.length>0?
               <LinkFoundPopUpBox closePopUp={closeLinksPopUp} searchResult={searchResult} /> :
               <LinksNotFoundPopUpBox closePopUp={closeLinksPopUp} />
             }

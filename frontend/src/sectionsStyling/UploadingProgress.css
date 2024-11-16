@@ -44,6 +44,7 @@
     line-height: normal;
 }
 .PreviewText{
+    cursor: pointer;
     color: #E1AA05;
     font-size: 12px;
     font-style: normal;
@@ -109,7 +110,7 @@
 }
 
 .AnalyseButtonOuter{
-    text-decoration: none;
+    cursor: pointer;
 }
 
 .media-preview-content{
@@ -118,6 +119,10 @@
 
 .PopUpBackgroundBlur{
     z-index: 4 !important;
+}
+
+.DataSizeAndIcon img{
+    cursor: pointer;
 }
 @media(max-width:720px){
     .AnalyseText{

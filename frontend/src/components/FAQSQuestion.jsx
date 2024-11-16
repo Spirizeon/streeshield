@@ -23,7 +23,7 @@ const FAQSQuestion = ({ question, answer, openFaq, setOpenFaq, number }) => {
 
 
   return (
-    <div className='FAQOuter'>
+    <div className='FAQOuter' style={{overflow:'hidden'}}>
       <div className='FAQQuestionAndIcon' onClick={onClickHandler}>
         <p className='QuestionInFAQ'>{question}</p>
         <img

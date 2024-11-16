@@ -45,7 +45,8 @@ const WhileUploading = ({ progress, fileName, fileSize }) => {
                 </div>
                 <div>
                   <div></div>
-                  <img src={CrossIconInUploading} alt="" />
+                  <img src={CrossIconInUploading} alt="" 
+                  onClick={() => window.location.reload()} className='CrossIconInUploading'/>
                 </div>
               </div>
               <p className='SubTextInWhileUploading'>Uploading...</p>

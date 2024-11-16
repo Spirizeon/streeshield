@@ -1,18 +1,57 @@
 import React from 'react'
-import MainLogo from "../assets/MainLogo.svg";
+import MainLogo from "../assets/PrimaryLogo.svg";
 import LanguageLogo from "../assets/language-logo.svg";
 import CheckYourMediaButton from "../components/CheckYourMediaButton";
 import "../componentsStyling/Footer.css";
 import WtspLogo from "../assets/WtspLogo.svg";
 import InstaLogo from "../assets/InstaLogo.svg";
 import MailLogo from "../assets/MailLogo.svg";
+import { useLocation,useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+    const navigate = useNavigate();
+
+    const handleScroll = (id) => {
+        if (!isHomePage) return;
+        const element = document.getElementById(id);
+        if (element) {
+            const topPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: topPosition - 111,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    const handleScrollTop = () => {
+        if (!isHomePage) return;
+        document.documentElement.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    const handleLogoClick = () => {
+        if (isHomePage) {
+            // Scroll to the top if already on the home page
+            document.documentElement.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            // Navigate to home page if not on the home page
+            navigate('/');
+        }
+    };
+
     return (
         <div className='Footer'>
+            <div className='BackgroundBlurViolet'></div>
             <div className='FooterTop'>
                 <div className='FooterTopLeft'>
-                    <img src={MainLogo} alt="" className='LogoInFooter'/>
+                    <img src={MainLogo} alt="" className='LogoInFooter' onClick={handleLogoClick}/>
                     <button className='LanguageChange'>
                         <img src={LanguageLogo} alt="" />
                         <p>EN</p>
@@ -22,10 +61,10 @@ const Footer = () => {
                 <div className='FooterTopRight'>
                     <div className='FooterQuickLinks'>
                         <h3>Quick Links</h3>
-                        <p>About</p>
-                        <p>Stats</p>
-                        <p>Case Study</p>
-                        <p>FAQ</p>
+                        <p onClick={handleScrollTop}>About</p>
+                        <p onClick={() => handleScroll('indian-stats')}>Stats</p>
+                        <p onClick={() => handleScroll('real-stories')}>Case Study</p>
+                        <p onClick={() => handleScroll('faq-section')}>FAQ</p>
                     </div>
                     <div className='FooterSupport'>
                         <h3>Support</h3>

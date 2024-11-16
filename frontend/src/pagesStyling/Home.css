@@ -27,6 +27,27 @@
     background-color: #1F1F1F;
 }
 
+.BackgroundBlurViolet{
+    z-index: -1;
+    position: absolute;
+    left: -160px;
+    bottom: 0px;
+    width: max(40vw, 40vh);
+    height: max(40vw, 40vh);
+    opacity: 0.3;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(153, 23, 255, 0.28) 0%, rgba(153, 23, 255, 0.00) 100%);
+}
+.BackgroundBlurYellow{
+    z-index: -1;
+    position: absolute;
+    right: -160px;
+    top: 0px;
+    width: max(40vw, 40vh);
+    height: max(40vw, 40vh);
+    opacity: 0.3;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 193, 7, 0.28) 0%, rgba(255, 193, 7, 0.00) 100%);
+}
+
 @media(max-width:1240px){
     .HalfShieldLeft,.HalfShieldRight{
         top: 280px;
@@ -36,6 +57,12 @@
 @media(max-width:1080px){
     .BorderBottomForSection{
         left: -120px;
+        right: -120px;
+    }
+    .BackgroundBlurViolet{
+        left: -120px;
+    }
+    .BackgroundBlurYellow{
         right: -120px;
     }
 }
@@ -48,6 +75,12 @@
     .HalfShieldLeft,.HalfShieldRight{
         width: 26vw;
     }
+    .BackgroundBlurViolet{
+        left: -64px;
+    }
+    .BackgroundBlurYellow{
+        right: -64px;
+    }
 }
 
 @media(max-width:720px){
@@ -58,6 +91,12 @@
     .HalfShieldLeft,.HalfShieldRight{
         top: 220px;
         width: 32vw;
+    }
+    .BackgroundBlurViolet{
+        left: -40px;
+    }
+    .BackgroundBlurYellow{
+        right: -40px;
     }
 }
 

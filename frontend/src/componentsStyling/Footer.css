@@ -18,6 +18,11 @@
     gap: 120px;
 }
 
+.LogoInFooter{
+    width:132px;
+    cursor: pointer;
+}
+
 .FooterQuickLinks h3,.FooterSupport h3{
     color: #C4C4C4;
     font-feature-settings: 'liga' off, 'clig' off;
@@ -38,6 +43,7 @@
     font-weight: 500;
     line-height: 130%;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 .FooterQuickLinks,.FooterSupport{
@@ -69,6 +75,7 @@
     display: flex;
     flex-direction: column;
     gap: 64px;
+    position: relative;
 }
 
 .FooterBottomCopyWrite p{
@@ -128,9 +135,6 @@
 }
 
 @media(max-width:560px){
-    .LogoInFooter{
-        width:134px;
-    }
     .LanguageChange{
         padding: 6px 8px;
     }

@@ -13,26 +13,35 @@ const Home = () => {
       <img src={halfshield} alt="" className='HalfShieldLeft'/>
       <img src={halfshield} alt="" className='HalfShieldRight'/>
       
-      <div className='SectionOuterForBorder'>
+      <div className='SectionOuterForBorder' id='hero-section'>
         <HeroSection />
-        <div className='BorderBottomForSection'></div>
+        <div className='BorderBottomForSection' id='indian-stats'></div>
+        <div className='BackgroundBlurViolet'></div>
+        <div className='BackgroundBlurYellow'></div>
       </div>
-      <div className='SectionOuterForBorder'>
+      <div className='SectionOuterForBorder' >
         <IndianStats />
         <div className='BorderBottomForSection'></div>
+        <div className='BackgroundBlurViolet'></div>
+        <div className='BackgroundBlurYellow'></div>
       </div>
       <div className='SectionOuterForBorder'>
         <HowItWorks />
-        <div className='BorderBottomForSection'></div>
+        <div className='BorderBottomForSection' id='real-stories'></div>
       </div>
-      <div className='SectionOuterForBorder'>
+      <div className='SectionOuterForBorder' >
         <RealStoriesAndImpact />
-        <div className='BorderBottomForSection'></div>
+        <div className='BorderBottomForSection' id='faq-section'></div>
+        <div className='BackgroundBlurViolet'></div>
+        <div className='BackgroundBlurYellow'></div>
       </div>
-      <div className='SectionOuterForBorder'>
+      <div className='SectionOuterForBorder' >
       <FAQSection />
       <div className='BorderBottomForSection'></div>
+      <div className='BackgroundBlurViolet'></div>
+      <div className='BackgroundBlurYellow'></div>
       </div>
+      
     </div>
   )
 }

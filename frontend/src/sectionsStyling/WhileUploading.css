@@ -3,7 +3,9 @@
     flex-direction: column;
     gap: 8px;
 }
-
+.CrossIconInUploading{
+    cursor: pointer;
+}
 .WhiteCardInWhileUploading{
     display: flex;
     align-items: center;
@@ -64,6 +66,10 @@
     background: #6F6F6F;
     gap: 12px;
     padding: 15.2px 30.4px;
+}
+
+.AnalyzeButtonInWhileUploading:hover{
+    cursor: not-allowed;
 }
 
 .InnerSpotlightCardInWhileUploading{

@@ -7,11 +7,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Analysing from './sections/Analysing';
 import Result from './sections/Result';
 import MainVerticalLine from "./assets/MainVerticalLine.svg"
+import ScrollToTop from './ScrollToTop';
 function App() {
 
   return (
     <>
     <BrowserRouter>
+    <ScrollToTop/>
     <NavBar/>
     <div className='MainVeticalLineOuter'>
       <img src={MainVerticalLine} alt="" className='VeticalLineLeft'/>

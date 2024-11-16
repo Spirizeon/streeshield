@@ -37,10 +37,9 @@ const OuterCircularProgressBar = ({ percentage }) => {
                 return newProgress < percentage ? newProgress : percentage;
             });
         }, incrementTime);
-        
         return () => clearInterval(timer);
     }, [percentage, incrementValue]);
-
+    
     return (
         <div className="OuterCircularProgressBar">
             <CircularProgressBar size={size} strokeWidth={strokeWidth} progress={Math.round(progress)} />
