@@ -68,7 +68,7 @@ const NavBar = () => {
                 <div className='AllNavLinks'>
                     <p 
                         onClick={handleScrollTop} 
-                        style={!isHomePage ? disabledStyle : {}}>
+                        style={!isHomePage ? disabledStyle : {}} className='dummy'>
                         About
                     </p>
                     <p 

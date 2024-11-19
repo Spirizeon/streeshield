@@ -25,9 +25,26 @@
     display: flex;
     gap: 12px;
     align-items: center;
+    overflow:hidden
 }
 
 .CrossIconDivInLinkPopUp{
     display: flex;
     justify-content: flex-end;
+}
+
+.CrossIconDivInLinkPopUp img{
+    cursor: pointer;
+}
+@media(max-width:560px){
+    .LinkFoundPopUpBoxOuter{
+        left: 32px;
+        right: 32px;
+    }
+    .LinkInPopUp{
+        font-size: 16px;
+    }
+    .LinkFoundPopUpBoxOuter{
+        padding: 24px;
+    }
 }

@@ -18,15 +18,16 @@
     cursor: pointer;
 }
 
-.FAQAnswer{
+.FAQAnswer {
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(30px);
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    padding: 24px 16px;
+    transition: opacity 0.3s ease;
 }
+
 
 .FAQOuter{
     display: flex;

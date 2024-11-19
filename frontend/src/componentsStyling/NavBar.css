@@ -133,3 +133,9 @@
         display: flex;
     }
 }
+
+@media(max-width:480px){
+    .LogoOuter img{
+        width: 104px;
+    }
+}
