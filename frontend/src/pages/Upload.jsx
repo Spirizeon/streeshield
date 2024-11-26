@@ -37,7 +37,7 @@ const Upload = () => {
         const formData = new FormData();
         formData.append('file', file);
 
-        fetch('http://localhost:8000/upload', {
+        fetch('http://streeshield-backend.onrender.com/upload', {
             method: 'POST',
             body: formData,
         })
