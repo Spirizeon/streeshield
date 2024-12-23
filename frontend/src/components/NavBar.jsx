@@ -34,7 +34,7 @@ const NavBar = () => {
         if (element) {
             const topPosition = element.getBoundingClientRect().top + window.scrollY;
             window.scrollTo({
-                top: topPosition - 111,
+                top: topPosition - 94,
                 behavior: 'smooth'
             });
         }
